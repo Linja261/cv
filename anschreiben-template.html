@@ -1,0 +1,384 @@
+<!--
+  Anschreiben-Template – Linja Scharffetter
+  Design System: Vanille-Heidelbeer (passend zum CV)
+  Brand Kit: brand-kit.md
+  Stand: 2026-02-20
+
+  ANLEITUNG:
+  1. Variablen in {{KLAMMERN}} ersetzen
+  2. Passenden Einstiegs-Baustein wählen (A, B oder C)
+  3. Kernargument anpassen (aus Stationen + Stellenanforderungen)
+  4. Im Browser öffnen → Strg+P → Als PDF speichern
+-->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bewerbung – Linja Scharffetter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&family=Geist+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #44403c;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            background: #FAFAF8;
+        }
+
+        .page {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 48px 56px;
+            background: #FAFAF8;
+        }
+
+        /* ─── Header ─── */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #E5E2DB;
+        }
+
+        .name {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.6em;
+            font-weight: 400;
+            color: #1A1A1A;
+            letter-spacing: -0.01em;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            color: #a8a29e;
+            margin-top: 4px;
+        }
+
+        .contact {
+            text-align: right;
+            font-size: 0.75rem;
+            color: #555555;
+            line-height: 1.8;
+        }
+
+        .contact a {
+            color: #7b6ba5;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* ─── Meta (Datum, Empfänger) ─── */
+        .meta {
+            margin-bottom: 36px;
+            font-size: 0.88rem;
+            color: #555555;
+        }
+
+        .meta .date {
+            text-align: right;
+            margin-bottom: 24px;
+            color: #a8a29e;
+            font-size: 0.82rem;
+        }
+
+        .meta .recipient {
+            line-height: 1.6;
+        }
+
+        /* ─── Betreff ─── */
+        .subject {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1A1A1A;
+            margin-bottom: 28px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #7b6ba5;
+            display: inline-block;
+        }
+
+        /* ─── Body ─── */
+        .body p {
+            margin-bottom: 14px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .body .highlight {
+            background: #f6f4f9;
+            border-left: 3px solid #7b6ba5;
+            padding: 12px 16px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9rem;
+        }
+
+        .body .highlight strong {
+            color: #463863;
+        }
+
+        /* ─── Kernkompetenzen-Tags ─── */
+        .skills-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 16px 0 20px;
+        }
+
+        .skill-tag {
+            font-size: 0.68rem;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .tag-strategy {
+            background: #fae8de;
+            color: #73402e;
+        }
+
+        .tag-tech {
+            background: #e0ede6;
+            color: #31493d;
+        }
+
+        .tag-leadership {
+            background: #ece8f2;
+            color: #463863;
+        }
+
+        /* ─── Signatur ─── */
+        .signature {
+            margin-top: 36px;
+        }
+
+        .signature .greeting {
+            margin-bottom: 32px;
+        }
+
+        .signature .name-sign {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.15em;
+            color: #1A1A1A;
+        }
+
+        /* ─── Footer ─── */
+        .footer {
+            margin-top: 48px;
+            padding-top: 16px;
+            border-top: 1px solid #E5E2DB;
+            font-size: 0.7rem;
+            color: #a8a29e;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* ─── Print ─── */
+        @page {
+            size: A4;
+            margin: 10mm 18mm;
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .page {
+                padding: 0;
+                min-height: auto;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* ─── Baustein-Hinweise (nur Screen) ─── */
+        .template-hint {
+            background: #fff7ed;
+            border: 1px dashed #D4714E;
+            border-radius: 6px;
+            padding: 10px 14px;
+            font-size: 0.78rem;
+            color: #a86340;
+            margin-bottom: 12px;
+        }
+
+        .template-hint code {
+            font-family: 'Geist Mono', monospace;
+            background: #fdf5f0;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 0.72rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════════════════════
+         ANLEITUNG (nur auf Screen sichtbar, nicht im Druck)
+         ════════════════════════════════════════════════════════ -->
+    <div class="no-print"
+        style="max-width: 210mm; margin: 16px auto; padding: 16px 24px; background: #f6f4f9; border-radius: 8px; font-size: 0.82rem; color: #463863; border: 1px solid #d9d1e5;">
+        <strong>Anschreiben-Generator</strong> – Variablen in
+        <code style="font-family: 'Geist Mono', monospace; background: #ece8f2; padding: 1px 4px; border-radius: 3px;">{{KLAMMERN}}</code>
+        ersetzen, passenden Einstieg wählen, dann <strong>Strg+P → PDF speichern</strong>.
+    </div>
+
+    <div class="page">
+
+        <!-- ─── HEADER ─── -->
+        <div class="header">
+            <div>
+                <div class="name">Linja Scharffetter</div>
+                <div class="subtitle">Strategische Systemgestalterin · Produktmanagement · Transformation</div>
+            </div>
+            <div class="contact">
+                <a href="mailto:scharffetter@linja.me">scharffetter@linja.me</a><br>
+                +49 172 472 5757<br>
+                NRW · Ruhrgebiet<br>
+                <a href="https://www.linkedin.com/in/linja-scharffetter/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- ─── META ─── -->
+        <div class="meta">
+            <div class="date">{{DATUM}}</div>
+            <div class="recipient">
+                {{FIRMA}}<br>
+                {{ANSPRECHPARTNER}}<br>
+                {{STRASSE}}<br>
+                {{PLZ}} {{ORT}}
+            </div>
+        </div>
+
+        <!-- ─── BETREFF ─── -->
+        <div class="subject">
+            Bewerbung als {{ROLLENTITEL}}
+        </div>
+
+        <!-- ─── BODY ─── -->
+        <div class="body">
+
+            <!-- ┌──────────────────────────────────────────────┐
+                 │  BAUSTEIN 1: EINSTIEG                        │
+                 │  Wähle A, B oder C – lösche die anderen      │
+                 └──────────────────────────────────────────────┘ -->
+
+            <!-- EINSTIEG A: Strategie & Produkt -->
+            <p>
+                Sehr geehrte/r {{ANREDE}},
+            </p>
+            <p>
+                {{EINSTIEG – z.B.: "Was mich an der Rolle bei [Firma] begeistert: [konkreter Bezug zur Ausschreibung/Mission].
+                Als strategische Produktmanagerin mit 13+ Jahren Erfahrung an der Schnittstelle von Produkt, Organisation und Markt
+                bringe ich genau die Perspektive mit, die [Firma] für [konkretes Vorhaben] sucht."}}
+            </p>
+
+            <!-- ┌──────────────────────────────────────────────┐
+                 │  BAUSTEIN 2: KERNARGUMENT                    │
+                 │  Match: Anforderung → eigene Erfahrung       │
+                 └──────────────────────────────────────────────┘ -->
+
+            <p>
+                {{KERNARGUMENT – Struktur: "Die Ausschreibung betont [X]. Genau das habe ich bei [Station] verantwortet:
+                [konkretes Ergebnis mit Zahlen]. Dabei habe ich gelernt, dass [Erkenntnis], was für die Rolle als [Titel] bei [Firma]
+                unmittelbar relevant ist."}}
+            </p>
+
+            <!-- Optionaler Highlight-Block für Zahlen -->
+            <div class="highlight">
+                <strong>Ergebnisse aus meiner Laufbahn:</strong> {{z.B. "+3,5 Mio € Umsatzsteigerung · +132% aktive Nutzer ·
+                EU-Compliance-Projekt mit 40+ Stakeholdern in 17 Ländern · 2 Spin-outs initiiert"}}
+            </div>
+
+            <!-- ┌──────────────────────────────────────────────┐
+                 │  BAUSTEIN 3: SKILL-TAGS                      │
+                 │  Relevante Tags auswählen, Rest löschen      │
+                 └──────────────────────────────────────────────┘ -->
+
+            <div class="skills-bar">
+                <!-- Strategie (Amber) -->
+                <span class="skill-tag tag-strategy">Produktstrategie</span>
+                <span class="skill-tag tag-strategy">OKR</span>
+                <span class="skill-tag tag-strategy">Go-to-Market</span>
+                <span class="skill-tag tag-strategy">Business Model Canvas</span>
+                <!-- Tech/Systeme (Emerald) -->
+                <span class="skill-tag tag-tech">Scrum / Kanban / SAFe</span>
+                <span class="skill-tag tag-tech">Hypothesis-driven Development</span>
+                <span class="skill-tag tag-tech">Product Analytics</span>
+                <span class="skill-tag tag-tech">A/B Testing</span>
+                <!-- Leadership (Violet) -->
+                <span class="skill-tag tag-leadership">Stakeholder Management</span>
+                <span class="skill-tag tag-leadership">Change Management</span>
+                <span class="skill-tag tag-leadership">Lateral Leadership</span>
+                <span class="skill-tag tag-leadership">Facilitation</span>
+            </div>
+
+            <!-- ┌──────────────────────────────────────────────┐
+                 │  BAUSTEIN 4: KULTURFIT / ARBEITSWEISE         │
+                 │  Fester Block – nur leicht anpassen           │
+                 └──────────────────────────────────────────────┘ -->
+
+            <p>
+                Meine Arbeitsweise ist geprägt von dem Anspruch, Strategie und operative Realität zusammenzubringen –
+                nicht als Konzept, sondern als gelebte Praxis. Ich denke in Systemen, übersetze zwischen Business,
+                Tech und Menschen und schaffe Klarheit, wo Komplexität Orientierung braucht. Dabei arbeite ich
+                hypothesengetrieben, datengestützt und immer auf Augenhöhe.
+            </p>
+
+            <!-- ┌──────────────────────────────────────────────┐
+                 │  BAUSTEIN 5: RAHMENBEDINGUNGEN & ABSCHLUSS   │
+                 │  Arbeitsmodell, Gehalt, Verfügbarkeit         │
+                 └──────────────────────────────────────────────┘ -->
+
+            <p>
+                {{RAHMENBEDINGUNGEN – z.B.: "Ich bringe Erfahrung in remote-first Produktorganisationen mit und bin
+                flexibel verfügbar. Meine Gehaltsvorstellung liegt bei [X] € brutto/Jahr."}}
+            </p>
+
+            <p>
+                Ich freue mich auf ein Gespräch, in dem wir herausfinden, ob meine Perspektive und Ihre Herausforderungen
+                zusammenpassen.
+            </p>
+
+        </div>
+
+        <!-- ─── SIGNATUR ─── -->
+        <div class="signature">
+            <div class="greeting">Mit besten Grüßen</div>
+            <div class="name-sign">Linja Scharffetter</div>
+        </div>
+
+        <!-- ─── FOOTER ─── -->
+        <div class="footer">
+            <span>scharffetter@linja.me · +49 172 472 5757</span>
+            <span>NRW · Ruhrgebiet</span>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
