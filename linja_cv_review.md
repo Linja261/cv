@@ -1,7 +1,7 @@
 # CV-Review: Multi-Perspektiven-Analyse
 
 **Datei:** `index.html`
-**Stand:** 2026-02-25
+**Stand:** 2026-02-26 (inkl. stellenspezifischer Analyse + Anschreibenvorschläge)
 
 ---
 
@@ -121,6 +121,168 @@ Für eine CoS-Rolle: starkes Profil (Übersetzerin, Cross-funktional, C-Level-Er
 4. **Branche nicht im Hero** – Recruiter mit Branchenfilter haben keinen Anker
 5. **Zertifizierungen eher nischig** – kein PSPO, PMP oder vergleichbar bekanntes Label
 
+
+---
+
+## 7. Stellenspezifische CV-Analyse & Anschreibenvorschläge (Stand: 2026-02-26)
+
+### 7.1 Chief of Staff – Product HEMS & Energy | 1KOMMA5° | Remote (Fit: 9/10)
+
+**Was passt:**
+- Cross-funktionale Koordination ist Linjas Kernkompetenz (ista: 17 Märkte, 40+ Stakeholder)
+- C-Level-Reporting bereits belegt (CEO/CFO bei ista)
+- Strategy-to-Execution: genau die Brücke, die CoS bauen muss
+- ista = Energiemesstechnik → direkte Branchennähe zu Energiesektor
+- „Ich denke in Systemen" im Hero passt perfekt zur CoS-Rolle
+
+**CV-Gaps für diese Stelle:**
+- „Executive Support" (Kalender, Dokumentation) klingt im CV nicht durch – Linja sollte im Anschreiben klarstellen, dass sie operative Entlastung als Teil strategischer Steuerung versteht, nicht als Admin
+- Kein Startup/Scale-up-Track-Record – 1KOMMA5° ist Series-C-Scale-up, Linja kommt aus Konzern + Mittelstand
+- Energiewende/CleanTech nicht explizit im CV erwähnt
+
+**Anschreibenvorschlag:**
+
+> Sehr geehrtes Team von 1KOMMA5°,
+>
+> als ich die Rolle Chief of Staff – Product gelesen habe, habe ich mich sofort wiedererkannt: Die Verbindung von strategischer Steuerung, cross-funktionaler Koordination und operativer Umsetzungskraft ist genau das, was mich in den letzten 13 Jahren angetrieben hat.
+>
+> Bei ista International habe ich als direkte Ansprechpartnerin von CEO und CFO die regulatorische Umsetzung einer EU-Direktive über 17 Ländermärkte mit 40+ Stakeholdern koordiniert – ein Vorhaben, das Business, Technologie und Politik gleichzeitig zusammenbringen musste. Dabei habe ich gelernt, was es bedeutet, eine Führungskraft operativ zu entlasten und gleichzeitig strategische Initiativen voranzutreiben.
+>
+> Was mich an 1KOMMA5° besonders reizt: Die Energiewende ist nicht nur ein Markt, sondern ein System – und Systeme zu verstehen und zu gestalten ist das, was ich am besten kann. Mein Hintergrund in der Energiemesstechnik bei ista und meine Erfahrung in der Übersetzung zwischen Fachbereichen machen mich zur Brückenbauerin, die Heartbeat als Plattform braucht.
+>
+> Ich freue mich auf ein Gespräch.
+
+---
+
+### 7.2 Epic Owner – Service Design | ARD ZDF Beitragsservice | Köln (Fit: 8.5/10)
+
+**Was passt:**
+- Design Thinking Facilitator-Zertifizierung (Haufe Akademie) + HCD (HPI) – exakt gefordert
+- 50+ Tiefeninterviews + User Research bei ista → starke Discovery-Kompetenz
+- Facilitation & Workshop-Moderation explizit im CV
+- Stakeholder-Moderation über große Gruppen: 17 Märkte, Change-Begleitung bei Systemumstellungen
+- Standort Köln = NRW, Teilzeit möglich
+
+**CV-Gaps für diese Stelle:**
+- „Service Design" als Begriff nicht im CV – obwohl die Kompetenz da ist (Customer Journey Mapping, User Research, Design Thinking)
+- Öffentlicher Dienst als Kontext fehlt – kein Problem, aber im Anschreiben adressieren
+- „Methodenvermittlung an Nicht-Designer" gefordert – Linja hat das bei ista gemacht (Design Thinking Workshops), aber nicht explizit im CV formuliert
+
+**Anschreibenvorschlag:**
+
+> Sehr geehrte Damen und Herren,
+>
+> nutzerzentrierte Digitalisierung in einer komplexen Stakeholder-Landschaft zu gestalten – das ist kein Neuland für mich, sondern mein beruflicher roter Faden.
+>
+> Als zertifizierte Design Thinking Facilitatorin habe ich bei ista International über 50 Tiefeninterviews geführt, zwei Geschäftsideen bis zur Ausgründung validiert und Fachbereiche befähigt, nutzerzentrierte Methoden eigenständig anzuwenden. Bei ABS Safety habe ich als Senior Product Managerin Discovery-Prozesse aufgebaut, die von der Nutzerforschung über Prototyping bis zur datengestützten Optimierung reichen.
+>
+> Was mich an der Rolle des Epic Owner bei Ihnen besonders anspricht: Die Schnittstelle zwischen Beitragszahler:innen und Organisation ist ein klassisches Service-Design-Problem – es geht nicht nur um digitale Oberflächen, sondern um die Gestaltung ganzer Erlebnisketten. Genau darin liegt meine Stärke: Systeme zu verstehen, Stakeholder zusammenzubringen und tragfähige Lösungen zu entwickeln.
+>
+> Ich freue mich, Ihnen im Gespräch zu zeigen, wie ich strategische Initiativen in greifbare Nutzererlebnisse übersetze.
+
+---
+
+### 7.3 Senior Product Manager – Team Lead | ControlExpert | Langenfeld (Fit: 8/10)
+
+**Was passt:**
+- Senior PM mit lateraler Führung eines 8-köpfigen Teams → Führungserfahrung belegt
+- Product Lifecycle E2E: Discovery → Prototyping → Go-to-Market → Optimierung
+- Datengestützte Strategie: Outcome-Bullets mit harten Metriken
+- KI-Kompetenz im CV (Context Engineering, AI-gestützte Recherche) – ControlExpert sucht AI-Affinität
+- Standort Langenfeld = NRW, hybrid
+
+**CV-Gaps für diese Stelle:**
+- „Multiple Product Teams" führen – Linja hat ein Team geführt, nicht mehrere. Im Anschreiben framen als nächster logischer Schritt
+- InsurTech/Schadenregulierung = branchenfremd. Aber: ista hatte regulatorischen Kontext + B2B-Komplexität
+- „Intrapreneur" gefordert – die Ausgründungen bei ista (Tooltime, Objego) sind genau das, aber nicht so gelabelt
+- Personalführung (disziplinarisch) wird erwartet – Linja hat lateral geführt. Gap adressieren
+
+**Anschreibenvorschlag:**
+
+> Sehr geehrtes ControlExpert-Team,
+>
+> KI-basierte Produkte in einem regulierten Marktumfeld zu skalieren, erfordert jemanden, der Technologie, Business und Organisation zusammendenkt. Genau das tue ich seit 13 Jahren.
+>
+> Als Senior Digital Product Managerin bei ABS Safety verantworte ich ein 8-köpfiges crossfunktionales Produktteam end-to-end – von der hypothesengetriebenen Discovery über Prototyping bis zur datengestützten Optimierung. Die Ergebnisse: +3,5 Mio. € Mehrumsatz, +132 % aktive Nutzer. Bei ista International habe ich als Intrapreneurin Geschäftsideen validiert, von denen zwei als eigenständige Unternehmen ausgegründet wurden.
+>
+> Was mich an ControlExpert reizt: Die Verbindung von KI-Innovation und Versicherungskomplexität ist genau die Art von Schnittstellenproblem, das mich antreibt. Ich bringe die Erfahrung mit, Produktteams strategisch auszurichten, und die Ambition, von der Führung eines Teams zum Aufbau eines Produkt-Streams zu wachsen.
+>
+> Lassen Sie uns im Gespräch herausfinden, wie ich Ihren Produkt-Stream gestalten kann.
+
+---
+
+### 7.4 Principal Product Manager – E-commerce | tonies® | Düsseldorf (Fit: 7.5/10)
+
+**Was passt:**
+- 13+ Jahre PM-Erfahrung (gefordert: 7+)
+- Strategische Plattformrolle: ista-Erfahrung mit 17 Ländermärkten zeigt Plattform-Denken
+- Vendor Management: API-Koordination und Partnerschaftsverhandlung bei ista (Schweiz-Rollout)
+- Mentoring-Potenzial: laterale Führung + Facilitation
+- Data-driven: Outcome-Bullets, Product Analytics, Funnel-Analyse im CV
+- Standort Düsseldorf = NRW
+
+**CV-Gaps für diese Stelle:**
+- **Kein expliziter E-commerce-Track-Record** – größtes Gap. Die digitale Bestellstrecke bei ABS ist das nächstliegende, aber kein klassischer Webshop
+- Shopify, Commercetools etc. nicht im Toolstack – technische E-commerce-Stacks fehlen
+- „Principal" ist ein hoher Titel – Linja hat Senior PM, nicht Principal. Im Anschreiben über Impact argumentieren
+- Architecture Governance ist technisch – Linja hat die Business-/Strategie-Seite, nicht die technische Architektur
+
+**Anschreibenvorschlag:**
+
+> Liebes tonies-Team,
+>
+> eine globale E-commerce-Plattform strategisch weiterzuentwickeln erfordert jemanden, der über Features hinausdenkt – jemanden, der Plattform-Architektur, lokale Marktanforderungen und Nutzererlebnis gleichzeitig im Blick behält.
+>
+> Bei ista International habe ich internationale Rollouts über 17 Ländermärkte gesteuert und dabei gelernt, wie man globale Plattformlogik mit lokalen Anforderungen verbindet. Bei ABS Safety habe ich eine digitale Bestellstrecke von Grund auf aufgebaut, die 3,5 Mio. € Mehrumsatz generiert – inklusive Vendor-Koordination, Payment-Integration und Go-to-Market.
+>
+> Was mich an der Principal-Rolle bei tonies reizt: Die Herausforderung, eine Plattform-Migration strategisch zu begleiten und dabei sowohl technische Architekturentscheidungen als auch das Kundenerlebnis mitzugestalten. Meine Stärke liegt darin, zwischen Engineering, Business und Markt zu übersetzen – und andere PMs auf diesem Weg mitzunehmen.
+>
+> Ich freue mich darauf, mit Ihnen über die Zukunft Ihrer E-commerce-Plattform zu sprechen.
+
+---
+
+### 7.5 Product Manager Digital | Bermuda Digital Studio (E.ON) | Essen (Fit: 7.5/10)
+
+**Was passt:**
+- Design Thinking + Design Sprints: zertifiziert und vielfach angewendet
+- Digitale Produkte E2E: ABS-Station zeigt den kompletten Zyklus
+- Energiebranche: ista = Energiemesstechnik, direkter Branchenbezug zu E.ON
+- Standort Essen/Bochum = Ruhrgebiet, perfekt
+- Innovation + Startup-Atmosphäre im Konzern: ähnlich wie ista-Innovationsprojekte
+- Product Vision + Business Models: Lean Canvas/BMC im CV
+
+**CV-Gaps für diese Stelle:**
+- „Solider technischer Hintergrund" gefordert – Linja hat keinen Informatik-Background, aber technisches Verständnis (API-Koordination, GitHub im Toolstack)
+- „Product Owner-Erfahrung" explizit gefordert – im CV steht PM, nicht PO. Agile-Zertifizierung (Scrum Master) ist da
+- Befristeter Vertrag – Risiko für Linja, kein CV-Gap
+- Energiesektor-Wissen „nice-to-have" – und bei Linja tatsächlich vorhanden
+
+**Anschreibenvorschlag:**
+
+> Sehr geehrtes Bermuda-Digital-Team,
+>
+> digitale Produkte in einem Konzernumfeld von der Idee bis zur Umsetzung zu bringen – das habe ich bei ista International acht Jahre lang getan, bevor ich als Senior Product Managerin bei ABS Safety die End-to-End-Verantwortung für ein ganzes Produktportfolio übernommen habe.
+>
+> Was mich an Bermuda Digital Studio besonders anspricht: Die Kombination aus Startup-Kultur und Konzern-Infrastruktur kenne ich aus meiner Zeit bei ista, wo ich als Teil des Innovationsteams Geschäftsideen validiert habe, von denen zwei als eigenständige Unternehmen ausgegründet wurden. Ich bringe nicht nur Design-Thinking-Expertise und agile Produktentwicklung mit, sondern auch ein konkretes Verständnis der Energiebranche.
+>
+> Mit meiner Erfahrung in nutzerzentrierter Produktentwicklung, datengestützter Optimierung und meiner Verankerung im Ruhrgebiet wäre ich eine natürliche Verstärkung für Ihr Team.
+>
+> Ich freue mich auf ein Kennenlernen.
+
+---
+
+### Übergreifende CV-Empfehlungen aus der Stellenanalyse
+
+| Thema | Status im CV | Empfehlung |
+|---|---|---|
+| **Energiebranche** | Nicht im Hero, nur in Stationen | Für ista-nahe Stellen (1KOMMA5°, E.ON) im Anschreiben betonen |
+| **Service Design** | Kompetenz da, Begriff fehlt | Als Methoden-Tag ergänzen? Oder nur stellenspezifisch im Anschreiben |
+| **Personalführung vs. laterale Führung** | Lateral klar, disziplinarisch offen | Bei ControlExpert im Anschreiben als bewussten nächsten Schritt framen |
+| **E-commerce** | Digitale Bestellstrecke ≠ Webshop | Für tonies im Anschreiben die Parallelen stark machen |
+| **Intrapreneurship** | Ausgründungen belegt, aber nicht so gelabelt | Ggf. als Methoden-Tag oder im Hero aufnehmen |
+| **Startup/Scale-up-Erfahrung** | Fehlt explizit | ABS Safety (Mittelstand) ist das Nächste – im Anschreiben als Hands-on-Mentalität framen |
+
+---
 
 ## Feedback David
 1. **Kurzfazit** Sehr starkes Senior-Profil mit klarer Wirkung, guter Zahlenbasis und hoher Differenzierung. Der größte Hebel liegt nicht in mehr Inhalt, sondern in besserer Übersetzung für Recruiter-Logik: klare Zielrollen, schnell scannbare Outcomes, eindeutige Chronologie. **Was bereits sehr gut ist**
