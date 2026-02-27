@@ -73,6 +73,10 @@
             margin: 10mm 18mm;
         }
 
+        .lang-hidden {
+            display: none !important;
+        }
+
         @media print {
             .no-print {
                 display: none !important;
@@ -95,6 +99,10 @@
 
     <!-- Action Bar -->
     <div class="fixed top-0 right-0 flex justify-end gap-2 no-print p-3 pr-5">
+        <button id="lang-toggle" onclick="toggleLanguage()" style="background: #FAFAF8;"
+            class="flex items-center text-xs px-2 py-1.5 border border-stone-200 rounded text-stone-400 hover:text-stone-600 hover:border-stone-400 cursor-pointer transition-colors font-mono tracking-wide">
+            <span id="lang-label">EN</span>
+        </button>
         <button onclick="window.print()" style="background: #FAFAF8;"
             class="flex text-xs px-1.5 py-1.5 border border-stone-200 rounded text-stone-400 hover:text-stone-600 hover:border-stone-400 cursor-pointer transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
@@ -116,400 +124,826 @@
     <div class="max-w-[210mm] mx-auto px-8 py-12">
 
         <!-- ============================================ -->
-        <!-- HEADER -->
+        <!-- DEUTSCHE VERSION -->
         <!-- ============================================ -->
-        <header class="mb-16 print:p-0">
-            <div class="flex items-start gap-8">
-                <!-- Portrait -->
-                <img src="profile.jpg" alt="Linja Scharffetter"
-                    class="w-[100px] h-[100px] rounded-full object-cover flex-shrink-0"
-                    style="-webkit-print-color-adjust: exact; print-color-adjust: exact;">
-                <div class="flex-1">
-                    <h1 class="source-serif text-[1.8em] text-stone-900 mb-3 leading-[1.1]">Linja Scharffetter
-                    </h1>
-                    <p class="text-[1em] text-[1.25rem] text-stone-700">Senior Product Manager · Product Strategy ·
-                        Growth &amp; Innovation</p>
-                    <p class="text-[0.85rem] print:text-[0.65rem] text-stone-400 mb-6">M.Sc. Marketing &amp;
-                        Communications · B.A. International Management</p>
+        <div id="cv-de">
 
-                    <!-- Contact -->
-                    <div class="flex flex-wrap gap-x-2 gap-y-2 text-[0.75rem] print:text-[0.53rem] text-stone-400">
-                        <span class="flex items-center gap-1.5 text-violet-400 py-1 px-3 rounded-md bg-violet-50">
-                            <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                width="14" height="14" fill="currentColor">
-                                <path
-                                    d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z">
-                                </path>
-                            </svg>
-                            NRW / Ruhrgebiet
-                        </span>
-                        <a href="mailto:scharffetter@linja.me"
-                            class="flex items-center gap-1.5 text-violet-400 hover:text-violet-600 py-1 px-3 bg-violet-50 hover:bg-violet-100 rounded-md no-underline transition-colors duration-200">
-                            <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                width="14" height="14" fill="currentColor">
-                                <path
-                                    d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z">
-                                </path>
-                            </svg>
-                            scharffetter@linja.me
-                        </a>
-                        <a href="tel:+491724725757"
-                            class="flex items-center text-violet-400 hover:text-violet-600 py-1 px-3 bg-violet-50 hover:bg-violet-100 rounded-md hover:text-violet-600 no-underline transition-colors duration-200">
-                            <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                width="14" height="14" fill="currentColor">
-                                <path
-                                    d="M7 4V20H17V4H7ZM6 2H18C18.5523 2 19 2.44772 19 3V21C19 21.5523 18.5523 22 18 22H6C5.44772 22 5 21.5523 5 21V3C5 2.44772 5.44772 2 6 2ZM12 17C12.5523 17 13 17.4477 13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17Z">
-                                </path>
-                            </svg>
-                            +49 172 472 5757
-                        </a>
-                        <a href="https://www.linkedin.com/in/linja-scharffetter-815192121/"
-                            class="flex items-center gap-1.5 text-violet-400 hover:text-violet-600 py-1 px-3 bg-violet-50 hover:bg-violet-100 rounded-md hover:text-violet-600 no-underline transition-colors duration-200">
-                            <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                width="14" height="14" fill="currentColor">
-                                <path
-                                    d="M4.00098 3H20.001C20.5533 3 21.001 3.44772 21.001 4V20C21.001 20.5523 20.5533 21 20.001 21H4.00098C3.44869 21 3.00098 20.5523 3.00098 20V4C3.00098 3.44772 3.44869 3 4.00098 3ZM5.00098 5V19H19.001V5H5.00098ZM7.50098 9C6.67255 9 6.00098 8.32843 6.00098 7.5C6.00098 6.67157 6.67255 6 7.50098 6C8.3294 6 9.00098 6.67157 9.00098 7.5C9.00098 8.32843 8.3294 9 7.50098 9ZM6.50098 10H8.50098V17.5H6.50098V10ZM12.001 10.4295C12.5854 9.86534 13.2665 9.5 14.001 9.5C16.072 9.5 17.501 11.1789 17.501 13.25V17.5H15.501V13.25C15.501 12.2835 14.7175 11.5 13.751 11.5C12.7845 11.5 12.001 12.2835 12.001 13.25V17.5H10.001V10H12.001V10.4295Z">
-                                </path>
-                            </svg>
-                            LinkedIn
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
+            <!-- HEADER -->
+            <header class="mb-16 print:p-0">
+                <div class="flex items-start gap-8">
+                    <!-- Portrait -->
+                    <img src="profile.jpg" alt="Linja Scharffetter"
+                        class="w-[100px] h-[100px] rounded-full object-cover flex-shrink-0"
+                        style="-webkit-print-color-adjust: exact; print-color-adjust: exact;">
+                    <div class="flex-1">
+                        <h1 class="source-serif text-[1.8em] text-stone-900 mb-3 leading-[1.1]">Linja Scharffetter
+                        </h1>
+                        <p class="text-[1em] text-[1.25rem] text-stone-700">Senior Product Manager · Product Strategy ·
+                            Growth &amp; Innovation</p>
+                        <p class="text-[0.85rem] print:text-[0.65rem] text-stone-400 mb-6">M.Sc. Marketing &amp;
+                            Communications · B.A. International Management</p>
 
-
-        <!-- ============================================ -->
-        <!-- HERO STATEMENT -->
-        <!-- ============================================ -->
-        <section class="mb-16">
-            <p class="source-serif text-stone-800 leading-[1.35] text-[1.5em]">
-                13+ Jahre Erfahrung in Product Management, Product Strategy, Growth &amp; Innovation und
-                organisationaler Transformation – mit konsequenter Wirkung an der Schnittstelle von Business,
-                Produkt, Technologie und Organisation.
-            </p>
-            <p class="text-stone-500 max-w-[44em] leading-relaxed mt-4">Ich denke in Systemen – an der Schnittstelle
-                von Business, Produkt und Organisation. Ich erkenne schnell, ob ein Problem operativ oder
-                struktu&shy;rell ist, und übersetze zwischen Disziplinen, um aus impliziten Annahmen
-                gemein&shy;same Entscheidungsgrundlagen zu schaffen. Nach 8 Jahren im internationalen
-                Konzern ein bewusster Wechsel zu End-to-End-Verantwortung im Mittelstand. Ich suche
-                strategische Verantwortung über Produktgrenzen hinaus – dort, wo Strategie,
-                Produkt&shy;entwicklung und Organisation zusammen&shy;gedacht werden müssen.</p>
-            <ul class="mt-6 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
-                <li>+3,5 Mio. € Mehrumsatz durch digitale Bestellstrecke, 50 % schnellere Bearbeitung</li>
-                <li>+132 % aktive Nutzer und +178 % Dokumentationsvolumen durch kundenorientiertes Produkt</li>
-                <li>Steuerung regulatorischer Umsetzung in 17 Ländermärkten mit 40+ Stakeholdern</li>
-                <li>Aufbau wirksamer Discovery-Prozesse (30+ Interviews, systematische Validierung)</li>
-            </ul>
-        </section>
-
-        <hr class="border-stone-200 my-14 no-print">
-
-
-        <!-- ============================================ -->
-        <!-- STATIONEN -->
-        <!-- ============================================ -->
-        <section class="mb-16">
-            <p class="font-mono text-[0.72rem] font-medium uppercase tracking-wider text-stone-600 mb-8">Stationen</p>
-            <div class="space-y-10">
-
-                <!-- Station 1 -->
-                <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
-                    <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap">2020 – heute</span></div>
-                    <div>
-                        <h3 class="font-semibold text-stone-900 text-[0.99rem]">Digital Product Managerin → Senior
-                            Digital Product Managerin, ABS Safety GmbH</h3>
-                        <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Nach 8 Jahren im internationalen
-                            Konzernumfeld bewusster Wechsel in ein mittel&shy;stän&shy;disches Produktteam – mit
-                            End-to-End-Verantwortung von der Nutzer&shy;forschung über Prototyping und Go-to-Market bis
-                            zur datengestützten Optimierung. Laterale Führung eines 8-köpfigen crossfunktionalen
-                            Produktteams in enger Abstimmung mit Geschäftsführung.</p>
-                        <ul
-                            class="mt-2 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
-                            <li>Aufbau einer digitalen Bestellstrecke mit 3,5 Mio. € Umsatz und 50 % schnellerer
-                                Bearbeitungszeit in der Auftragsabwicklung</li>
-                            <li>Entwicklung eines Dokumentations-Tools zur Kundenbindung: +132 % aktive Nutzer, +178 %
-                                Dokumentationsvolumen</li>
-                            <li>Hypothesengetriebene Produktentwicklung mit 30+ Nutzerinterviews und
-                                systematischem Desirability und Usability Testing</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- ista Klammer -->
-                <div class="no-break">
-                    <div class="grid grid-cols-[auto_1fr] gap-x-6">
-                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap">2012 – 2020</span></div>
-                        <div>
-                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">ista International GmbH</h3>
-                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">4 Rollen in 8 Jahren –
-                                bewusste Querbewegung durch Marketing, Produkt, Innovation, IT und Change Management</p>
+                        <!-- Contact -->
+                        <div class="flex flex-wrap gap-x-2 gap-y-2 text-[0.75rem] print:text-[0.53rem] text-stone-400">
+                            <span class="flex items-center gap-1.5 text-violet-400 py-1 px-3 rounded-md bg-violet-50">
+                                <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="14" height="14" fill="currentColor">
+                                    <path
+                                        d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z">
+                                    </path>
+                                </svg>
+                                NRW / Ruhrgebiet
+                            </span>
+                            <a href="mailto:scharffetter@linja.me"
+                                class="flex items-center gap-1.5 text-violet-400 hover:text-violet-600 py-1 px-3 bg-violet-50 hover:bg-violet-100 rounded-md no-underline transition-colors duration-200">
+                                <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="14" height="14" fill="currentColor">
+                                    <path
+                                        d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z">
+                                    </path>
+                                </svg>
+                                scharffetter@linja.me
+                            </a>
+                            <a href="tel:+491724725757"
+                                class="flex items-center text-violet-400 hover:text-violet-600 py-1 px-3 bg-violet-50 hover:bg-violet-100 rounded-md hover:text-violet-600 no-underline transition-colors duration-200">
+                                <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="14" height="14" fill="currentColor">
+                                    <path
+                                        d="M7 4V20H17V4H7ZM6 2H18C18.5523 2 19 2.44772 19 3V21C19 21.5523 18.5523 22 18 22H6C5.44772 22 5 21.5523 5 21V3C5 2.44772 5.44772 2 6 2ZM12 17C12.5523 17 13 17.4477 13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17Z">
+                                    </path>
+                                </svg>
+                                +49 172 472 5757
+                            </a>
+                            <a href="https://www.linkedin.com/in/linja-scharffetter-815192121/"
+                                class="flex items-center gap-1.5 text-violet-400 hover:text-violet-600 py-1 px-3 bg-violet-50 hover:bg-violet-100 rounded-md hover:text-violet-600 no-underline transition-colors duration-200">
+                                <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="14" height="14" fill="currentColor">
+                                    <path
+                                        d="M4.00098 3H20.001C20.5533 3 21.001 3.44772 21.001 4V20C21.001 20.5523 20.5533 21 20.001 21H4.00098C3.44869 21 3.00098 20.5523 3.00098 20V4C3.00098 3.44772 3.44869 3 4.00098 3ZM5.00098 5V19H19.001V5H5.00098ZM7.50098 9C6.67255 9 6.00098 8.32843 6.00098 7.5C6.00098 6.67157 6.67255 6 7.50098 6C8.3294 6 9.00098 6.67157 9.00098 7.5C9.00098 8.32843 8.3294 9 7.50098 9ZM6.50098 10H8.50098V17.5H6.50098V10ZM12.001 10.4295C12.5854 9.86534 13.2665 9.5 14.001 9.5C16.072 9.5 17.501 11.1789 17.501 13.25V17.5H15.501V13.25C15.501 12.2835 14.7175 11.5 13.751 11.5C12.7845 11.5 12.001 12.2835 12.001 13.25V17.5H10.001V10H12.001V10.4295Z">
+                                    </path>
+                                </svg>
+                                LinkedIn
+                            </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Station 2 -->
-                <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
-                    <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-stone-900 text-[0.99rem]">Senior Specialist IT Support &amp;
-                            Communication <span class="font-normal text-[0.85rem] text-stone-400">2019 – 2020</span>
-                        </h3>
-                        <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Wechsel an die Schnittstelle
-                            von IT und Business, um Veränderungsprozesse nicht nur inhaltlich, sondern auch systemisch
-                            zu begleiten. Vorbereitung von 17 Ländermärkten auf die Umsetzung einer EU-Direktive in
-                            nationales Recht – mit Auswirkungen auf Mar&shy;keting,
-                            Technologie und Finanzen. Direktes Reporting an CEO und CFO. Begleitendes Change Management
-                            bei großen Systemumstellungen und Neuaufbau des IT-Portfolio-Managements.</p>
-                        <ul
-                            class="mt-2 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
-                            <li>Steuerung der EU-weiten Vorbereitung mit 40+ Stakeholdern und fristgerechter Umsetzung
-                                in allen 17 Märkten</li>
-                            <li>Change-Begleitung und Konfliktmediation bei 3 Systemumstellungen mit je 30–150
-                                betroffenen Mitarbeitenden</li>
-                            <li>Neustrukturierung des IT-Portfolio-Managements über 17 Länder mit signifikant erhöhter
-                                Umsetzungswahrscheinlichkeit</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Station 3 -->
-                <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
-                    <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-stone-900 text-[0.99rem]">Specialist Marketing <span
-                                class="font-normal text-[0.85rem] text-stone-400">2017 – 2019</span></h3>
-                        <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Übergang von der Marktanalyse
-                            in die eigenverantwortliche Leitung internationaler Innovationsprojekte – an der
-                            Schnittstelle von Business Development, Kundenzentrie&shy;rung und Produktentwicklung.
-                            Validierung neuer Geschäftsideen durch User Research und Design Thinking, Entwicklung von
-                            Go-to-Market-Strategien mit direkter Wirkung auf Geschäftsführungsentscheidungen.</p>
-                        <ul
-                            class="mt-2 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
-                            <li>Alleinverantwortliche Projektleitung für den PropTech-Rollout in der Schweiz inkl.
-                                API-Koordination und Partnerschaftsverhandlung</li>
-                            <li>Sicherung von ~90 % Hardware-Marktanteil im britischen Neubaumarkt durch
-                                Geschäftsmodell-Innovation (70–100k Wohneinheiten/Jahr)</li>
-                            <li>Konzeption und Durchführung von 50+ Tiefeninterviews und 2 Design Thinking Workshops – 2
-                                der validierten Ideen wurden als eigenständige Unternehmen ausgegründet (Tooltime,
-                                Objego)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Station 4 -->
-                <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
-                    <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-stone-900 text-[0.99rem]">Marketing Assistant <span
-                                class="font-normal text-[0.85rem] text-stone-400">2015 – 2017</span></h3>
-                        <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Verantwortung für die jährliche
-                            Kundenzufriedenheitserhebung über 10 Kernmärkte (1.000+ Kunden) und Weiterentwicklung des
-                            Customer Retention Index als strate&shy;gisches Steuerungsinstrument und zur Optimierung
-                            operativer Prozesse. Mitwirkung am M&A-Prozess (Exit zum strategischen Investor CKI) sowie
-                            an einem unternehmens&shy;weiten Strategieprojekt (Fokus auf Change, HR,
-                            Prozessoptimierung).</p>
-                    </div>
-                </div>
-
-                <!-- Station 5 -->
-                <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
-                    <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-stone-900 text-[0.99rem]">Duales Studium <span
-                                class="font-normal text-[0.85rem] text-stone-400">2012 – 2015</span></h3>
-                        <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Duales Studium mit Schwerpunkt
-                            Corporate Communication & Public Affairs. Rotation durch alle zentralen Unternehmensbereiche
-                            – von Finanzen und Controlling über Operations bis Marketing und Vertrieb. Mitverantwortung
-                            für den ersten digitalen Nach&shy;haltig&shy;keitsbericht nach GRI-Leitlinien und
-                            politisches
-                            Lobbying
-                            (EED).</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <hr class="border-stone-200 my-14 no-print">
+            </header>
 
 
-        <!-- ============================================ -->
-        <!-- METHODIK & HANDWERK -->
-        <!-- ============================================ -->
-        <section class="mb-16">
-            <p class="font-mono text-[0.72rem] font-medium uppercase tracking-wider text-stone-600 mb-8">Methodik &amp;
-                Handwerk</p>
-            <p class="source-serif text-stone-800 leading-[1.35] mb-10 text-[1.5em]">
-                Fundierte Entscheidungen auf exzellentem handwerklichen Niveau. Methoden setze ich gezielt dort ein,
-                wo sie Wirkung entfalten.</p>
-
-            <!-- Quad Grid als Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                <div class="ref-card">
-                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-2"><span
-                            class="inline-block w-2 h-2 rounded-full bg-amber-400 mr-2 relative -top-px"></span>Forschung
-                        &amp; Strategie</p>
-                    <p class="text-stone-500 text-[0.94rem] print:text-[0.75rem] leading-relaxed">Ich starte nicht mit
-                        Frameworks, sondern mit Ursachen.
-                        Erst klären, welche Wirkung wir erzielen wollen – dann entscheiden, ob Dialog,
-                        Daten&shy;analyse oder Experimente den größten Erkenntnis&shy;gewinn bringen.</p>
-                </div>
-                <div class="ref-card">
-                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-2"><span
-                            class="inline-block w-2 h-2 rounded-full bg-violet-400 mr-2 relative -top-px"></span>Produktentwicklung
-                        &amp; Umsetzung</p>
-                    <p class="text-stone-500 text-[0.94rem] print:text-[0.75rem] leading-relaxed">Build–measure–learn
-                        ist für mich ein Steue&shy;rungs&shy;rahmen, kein Ritual.
-                        Ich vali&shy;di&shy;ere ge&shy;zielt dort, wo Unsicherheit entsteht, und nutze KI, wenn sie
-                        Erkenntnis be&shy;schleu&shy;nigt, ohne dabei handwerkliche Qualität zu ersetzen.</p>
-                </div>
-                <div class="ref-card">
-                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-2"><span
-                            class="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2 relative -top-px"></span>Führung
-                        &amp; Zusammenarbeit</p>
-                    <p class="text-stone-500 text-[0.94rem] print:text-[0.75rem] leading-relaxed">Tragfähige
-                        Entscheidungen entstehen durch Klarheit, nicht durch Hierarchie.
-                        Ich mache Annahmen explizit, dokumentiere Denk&shy;wege und schaffe Räume für
-                        kon&shy;struk&shy;tiven Widerspruch – damit Teams anschluss&shy;fähig bleiben und Verantwortung
-                        übernehmen können.</p>
-                </div>
-                <div class="ref-card">
-                    <p class="font-semibold text-stone-900 text-[1rem] mb-2"><span
-                            class="inline-block w-2 h-2 rounded-full bg-sky-400 mr-2 relative -top-px"></span>Metriken
-                        &amp; Lernen </p>
-                    <p class="text-stone-500 text-[0.94rem] print:text-[0.75rem] leading-relaxed">Ich messe, um
-                        Entscheidungs&shy;qualität zu erhöhen, nicht um Ergebnisse zu
-                        recht&shy;fer&shy;tigen. Explorative Signale in der Discov&shy;ery, belastbare KPIs im Scale.
-                        Analyse
-                        dient
-                        Steuerung und Lernen, nicht Reporting.</p>
-                </div>
-            </div>
-
-            <!-- Methoden als Tags -->
-            <div class="mb-10">
-                <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Methoden</p>
-                <div class="flex flex-wrap gap-2">
-                    <!-- Q1: Forschung & Strategie (amber) -->
-                    <span class="ref-tag bg-amber-100 text-amber-700">Design Thinking &amp; Human-Centered Design</span>
-                    <span class="ref-tag bg-amber-100 text-amber-700">User Research</span>
-                    <span class="ref-tag bg-amber-100 text-amber-700">Product Strategy &amp; Roadmap</span>
-                    <span class="ref-tag bg-amber-100 text-amber-700">Lean Canvas / BMC</span>
-                    <span class="ref-tag bg-amber-100 text-amber-700">Go-to-Market-Strategie</span>
-                    <span class="ref-tag bg-amber-100 text-amber-700">Growth Strategy</span>
-                    <span class="ref-tag bg-amber-100 text-amber-700">Context Engineering</span>
-                    <!-- Q2: Produktentwicklung & Umsetzung (violet) -->
-                    <span class="ref-tag bg-violet-100 text-violet-700">Product Discovery &amp; Delivery</span>
-                    <span class="ref-tag bg-violet-100 text-violet-700">Prototyping &amp; MVP</span>
-                    <span class="ref-tag bg-violet-100 text-violet-700">AI-gestützte Produkt&shy;entwicklung</span>
-                    <span class="ref-tag bg-violet-100 text-violet-700">RICE / Impact-Effort</span>
-                    <span class="ref-tag bg-violet-100 text-violet-700">Usability Testing</span>
-                    <span class="ref-tag bg-violet-100 text-violet-700">Scrum / Kanban / SAFe</span>
-                    <!-- Q3: Führung & Zusammenarbeit (emerald) -->
-                    <span class="ref-tag bg-emerald-100 text-emerald-700">Agile Leadership</span>
-                    <span class="ref-tag bg-emerald-100 text-emerald-700">Laterale Führung</span>
-                    <span class="ref-tag bg-emerald-100 text-emerald-700">Cross-funktionale Steuerung</span>
-                    <span class="ref-tag bg-emerald-100 text-emerald-700">Stakeholder Management</span>
-                    <span class="ref-tag bg-emerald-100 text-emerald-700">Change Management</span>
-                    <!-- Q4: Metriken & Lernen (sky) -->
-                    <span class="ref-tag bg-sky-100 text-sky-700">Product Analytics</span>
-                    <span class="ref-tag bg-sky-100 text-sky-700">AI-gestützte Datenanalyse</span>
-                    <span class="ref-tag bg-sky-100 text-sky-700">North Star Metric</span>
-                    <span class="ref-tag bg-sky-100 text-sky-700">OKRs</span>
-                    <span class="ref-tag bg-sky-100 text-sky-700">A/B Testing &amp; Experimentation</span>
-                </div>
-            </div>
-
-            <!-- Tools als Tags -->
-            <div class="mb-10 no-break">
-                <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Tools</p>
-                <div class="flex flex-wrap gap-2">
-                    <!-- Product & Collaboration -->
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Jira</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Confluence</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Miro</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Figma</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Trello</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">GitHub</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Notion</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Slack</span>
-                    <!-- AI & Automation -->
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Claude</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">ChatGPT</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Lovable</span>
-                    <!-- Data & Analytics -->
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">PowerBI</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Tableau</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Google Analytics</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">HubSpot</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Userflow</span>
-                    <!-- Knowledge & Basics -->
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">Obsidian</span>
-                    <span class="ref-tag" style="background: #F5F3EF; color: #888;">MS Office</span>
-                </div>
-            </div>
-
-            <!-- Zertifizierungen -->
-            <div class="mb-10 no-break">
-                <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Zertifizierungen</p>
-                <p class="text-stone-500 text-[0.85rem]">Product Discovery (Pendo, 2024) · Metrics for Product Manager
-                    (Mind the Product, 2023) · Certified Scrum Master (Agile42, 2020) · Design Thinking Facilitator
-                    (Haufe Akademie, 2018/19) · Human-Centered Design (HPI, 2018) · SAFe for Teams (ista, 2019)</p>
-            </div>
-
-            <!-- Sprachen -->
-            <div class="no-break">
-                <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Sprachen</p>
-                <p class="text-stone-500 text-[0.85rem]">Deutsch (Muttersprache) · Englisch (C1) · Spanisch (B1/B2) ·
-                    Französisch (A2)
+            <!-- HERO STATEMENT -->
+            <section class="mb-16">
+                <p class="source-serif text-stone-800 leading-[1.35] text-[1.5em]">
+                    13+ Jahre Erfahrung in Product Management, Product Strategy, Growth &amp; Innovation und
+                    organisationaler Transformation – mit konsequenter Wirkung an der Schnittstelle von Business,
+                    Produkt, Technologie und Organisation.
                 </p>
-            </div>
+                <p class="text-stone-500 max-w-[44em] leading-relaxed mt-4">Ich denke in Systemen – an der Schnittstelle
+                    von Business, Produkt und Organisation. Ich erkenne schnell, ob ein Problem operativ oder
+                    struktu&shy;rell ist, und übersetze zwischen Disziplinen, um aus impliziten Annahmen
+                    gemein&shy;same Entscheidungsgrundlagen zu schaffen. Nach 8 Jahren im internationalen
+                    Konzern ein bewusster Wechsel zu End-to-End-Verantwortung im Mittelstand. Ich suche
+                    strategische Verantwortung über Produktgrenzen hinaus – dort, wo Strategie,
+                    Produkt&shy;entwicklung und Organisation zusammen&shy;gedacht werden müssen.</p>
+                <ul class="mt-6 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                    <li>+3,5 Mio. € Umsatz durch digitale Bestellstrecke, 50 % schnellere Bearbeitungszeit</li>
+                    <li>+132 % aktive Nutzer und +178 % Dokumentationsvolumen durch kundenorientiertes Produkt</li>
+                    <li>Steuerung regulatorischer Umsetzung in 17 Ländermärkten mit 40+ Stakeholdern</li>
+                    <li>Aufbau wirksamer Discovery-Prozesse (30+ Interviews, systematische Validierung)</li>
+                </ul>
+            </section>
 
-        </section>
+            <hr class="border-stone-200 my-14 no-print">
 
-        <hr class="border-stone-200 my-14 no-print">
+
+            <!-- STATIONEN -->
+            <section class="mb-16">
+                <p class="font-mono text-[0.72rem] font-medium uppercase tracking-wider text-stone-600 mb-8">Stationen
+                </p>
+                <div class="space-y-10">
+
+                    <!-- Station 1 -->
+                    <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
+                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap">2020 – heute</span></div>
+                        <div>
+                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">Digital Product Managerin → Senior
+                                Digital Product Managerin, ABS Safety GmbH</h3>
+                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Nach 8 Jahren im internationalen
+                                Konzernumfeld bewusster Wechsel in ein mittel&shy;stän&shy;disches Produktteam – mit
+                                End-to-End-Verantwortung von der Nutzer&shy;forschung über Prototyping und Go-to-Market
+                                bis
+                                zur datengestützten Optimierung. Laterale Führung eines 8-köpfigen crossfunktionalen
+                                Produktteams in enger Abstimmung mit Geschäftsführung.</p>
+                            <ul
+                                class="mt-2 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                                <li>Aufbau einer digitalen Bestellstrecke mit 3,5 Mio. € Umsatz und 50 % schnellerer
+                                    Bearbeitungszeit in der Auftragsabwicklung</li>
+                                <li>Entwicklung eines Dokumentations-Tools zur Kundenbindung: +132 % aktive Nutzer, +178
+                                    %
+                                    Dokumentationsvolumen</li>
+                                <li>Hypothesengetriebene Produktentwicklung mit 30+ Nutzerinterviews und
+                                    systematischem Desirability und Usability Testing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ista Klammer -->
+                    <div class="no-break">
+                        <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                            <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap">2012 – 2020</span></div>
+                            <div>
+                                <h3 class="font-semibold text-stone-900 text-[0.99rem]">ista International GmbH</h3>
+                                <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">4 Rollen in 8 Jahren –
+                                    bewusste Querbewegung durch Marketing, Produkt, Innovation, IT und Change Management
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Station 2 -->
+                    <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
+                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">Senior Specialist IT Support &amp;
+                                Communication <span class="font-normal text-[0.85rem] text-stone-400">2019 – 2020</span>
+                            </h3>
+                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Wechsel an die Schnittstelle
+                                von IT und Business, um Veränderungsprozesse nicht nur inhaltlich, sondern auch
+                                systemisch
+                                zu begleiten. Vorbereitung von 17 Ländermärkten auf die Umsetzung einer EU-Direktive in
+                                nationales Recht – mit Auswirkungen auf Mar&shy;keting,
+                                Technologie und Finanzen. Direktes Reporting an CEO und CFO. Begleitendes Change
+                                Management
+                                bei großen Systemumstellungen und Neuaufbau des IT-Portfolio-Managements.</p>
+                            <ul
+                                class="mt-2 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                                <li>Steuerung der EU-weiten Vorbereitung mit 40+ Stakeholdern und fristgerechter
+                                    Umsetzung
+                                    in allen 17 Märkten</li>
+                                <li>Change-Begleitung und Konfliktmediation bei 3 Systemumstellungen mit je 30–150
+                                    betroffenen Mitarbeitenden</li>
+                                <li>Neustrukturierung des IT-Portfolio-Managements über 17 Länder mit signifikant
+                                    erhöhter
+                                    Umsetzungswahrscheinlichkeit</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Station 3 -->
+                    <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
+                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">Specialist Marketing <span
+                                    class="font-normal text-[0.85rem] text-stone-400">2017 – 2019</span></h3>
+                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Übergang von der Marktanalyse
+                                in die eigenverantwortliche Leitung internationaler Innovationsprojekte – an der
+                                Schnittstelle von Business Development, Kundenzentrie&shy;rung und Produktentwicklung.
+                                Validierung neuer Geschäftsideen durch User Research und Design Thinking, Entwicklung
+                                von
+                                Go-to-Market-Strategien mit direkter Wirkung auf Geschäftsführungsentscheidungen.</p>
+                            <ul
+                                class="mt-2 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                                <li>Alleinverantwortliche Projektleitung für den PropTech-Rollout in der Schweiz inkl.
+                                    API-Koordination und Partnerschaftsverhandlung</li>
+                                <li>Sicherung von ~90 % Hardware-Marktanteil im britischen Neubaumarkt durch
+                                    Geschäftsmodell-Innovation (70–100k Wohneinheiten/Jahr)</li>
+                                <li>Konzeption und Durchführung von 50+ Tiefeninterviews und 2 Design Thinking Workshops
+                                    – 2
+                                    der validierten Ideen wurden als eigenständige Unternehmen ausgegründet (Tooltime,
+                                    Objego)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Station 4 -->
+                    <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
+                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">Marketing Assistant <span
+                                    class="font-normal text-[0.85rem] text-stone-400">2015 – 2017</span></h3>
+                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Verantwortung für die jährliche
+                                Kundenzufriedenheitserhebung über 10 Kernmärkte (1.000+ Kunden) und Weiterentwicklung
+                                des
+                                Customer Retention Index als strate&shy;gisches Steuerungsinstrument und zur Optimierung
+                                operativer Prozesse. Mitwirkung am M&A-Prozess (Exit zum strategischen Investor CKI)
+                                sowie
+                                an einem unternehmens&shy;weiten Strategieprojekt (Fokus auf Change, HR,
+                                Prozessoptimierung).</p>
+                        </div>
+                    </div>
+
+                    <!-- Station 5 -->
+                    <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
+                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">Duales Studium <span
+                                    class="font-normal text-[0.85rem] text-stone-400">2012 – 2015</span></h3>
+                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Duales Studium mit Schwerpunkt
+                                Corporate Communication & Public Affairs. Rotation durch alle zentralen
+                                Unternehmensbereiche
+                                – von Finanzen und Controlling über Operations bis Marketing und Vertrieb.
+                                Mitverantwortung
+                                für den ersten digitalen Nach&shy;haltig&shy;keitsbericht nach GRI-Leitlinien und
+                                politisches
+                                Lobbying
+                                (EED).</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <hr class="border-stone-200 my-14 no-print">
+
+
+            <!-- METHODIK & HANDWERK -->
+            <section class="mb-16">
+                <p class="font-mono text-[0.72rem] font-medium uppercase tracking-wider text-stone-600 mb-8">Methodik
+                    &amp;
+                    Handwerk</p>
+                <p class="source-serif text-stone-800 leading-[1.35] mb-10 text-[1.5em]">
+                    Fundierte Entscheidungen auf exzellentem handwerklichen Niveau. Methoden setze ich gezielt dort ein,
+                    wo sie Wirkung entfalten.</p>
+
+                <!-- Quad Grid als Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.99rem] mb-2"><span
+                                class="inline-block w-2 h-2 rounded-full bg-amber-400 mr-2 relative -top-px"></span>Forschung
+                            &amp; Strategie</p>
+                        <p class="text-stone-500 text-[0.94rem] print:text-[0.75rem] leading-relaxed">Ich starte nicht
+                            mit
+                            Frameworks, sondern mit Ursachen.
+                            Erst klären, welche Wirkung wir erzielen wollen – dann entscheiden, ob Dialog,
+                            Daten&shy;analyse oder Experimente den größten Erkenntnis&shy;gewinn bringen.</p>
+                    </div>
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.99rem] mb-2"><span
+                                class="inline-block w-2 h-2 rounded-full bg-violet-400 mr-2 relative -top-px"></span>Produktentwicklung
+                            &amp; Umsetzung</p>
+                        <p class="text-stone-500 text-[0.94rem] print:text-[0.75rem] leading-relaxed">
+                            Build–measure–learn
+                            ist für mich ein Steue&shy;rungs&shy;rahmen, kein Ritual.
+                            Ich vali&shy;di&shy;ere ge&shy;zielt dort, wo Unsicherheit entsteht, und nutze KI, wenn sie
+                            Erkenntnis be&shy;schleu&shy;nigt, ohne dabei handwerkliche Qualität zu ersetzen.</p>
+                    </div>
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.99rem] mb-2"><span
+                                class="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2 relative -top-px"></span>Führung
+                            &amp; Zusammenarbeit</p>
+                        <p class="text-stone-500 text-[0.94rem] print:text-[0.75rem] leading-relaxed">Tragfähige
+                            Entscheidungen entstehen durch Klarheit, nicht durch Hierarchie.
+                            Ich mache Annahmen explizit, dokumentiere Denk&shy;wege und schaffe Räume für
+                            kon&shy;struk&shy;tiven Widerspruch – damit Teams anschluss&shy;fähig bleiben und
+                            Verantwortung
+                            übernehmen können.</p>
+                    </div>
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[1rem] mb-2"><span
+                                class="inline-block w-2 h-2 rounded-full bg-sky-400 mr-2 relative -top-px"></span>Metriken
+                            &amp; Lernen </p>
+                        <p class="text-stone-500 text-[0.94rem] print:text-[0.75rem] leading-relaxed">Ich messe, um
+                            Entscheidungs&shy;qualität zu erhöhen, nicht um Ergebnisse zu
+                            recht&shy;fer&shy;tigen. Explorative Signale in der Discov&shy;ery, belastbare KPIs im
+                            Scale.
+                            Analyse
+                            dient
+                            Steuerung und Lernen, nicht Reporting.</p>
+                    </div>
+                </div>
+
+                <!-- Methoden als Tags -->
+                <div class="mb-10">
+                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Methoden</p>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- Q1: Forschung & Strategie (amber) -->
+                        <span class="ref-tag bg-amber-100 text-amber-700">Design Thinking &amp; Human-Centered
+                            Design</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">User Research</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">Product Strategy &amp; Roadmap</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">Lean Canvas / BMC</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">Go-to-Market-Strategie</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">Growth Strategy</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">Context Engineering</span>
+                        <!-- Q2: Produktentwicklung & Umsetzung (violet) -->
+                        <span class="ref-tag bg-violet-100 text-violet-700">Product Discovery &amp; Delivery</span>
+                        <span class="ref-tag bg-violet-100 text-violet-700">Prototyping &amp; MVP</span>
+                        <span class="ref-tag bg-violet-100 text-violet-700">AI-gestützte Produkt&shy;entwicklung</span>
+                        <span class="ref-tag bg-violet-100 text-violet-700">RICE / Impact-Effort</span>
+                        <span class="ref-tag bg-violet-100 text-violet-700">Usability Testing</span>
+                        <span class="ref-tag bg-violet-100 text-violet-700">Scrum / Kanban / SAFe</span>
+                        <!-- Q3: Führung & Zusammenarbeit (emerald) -->
+                        <span class="ref-tag bg-emerald-100 text-emerald-700">Agile Leadership</span>
+                        <span class="ref-tag bg-emerald-100 text-emerald-700">Laterale Führung</span>
+                        <span class="ref-tag bg-emerald-100 text-emerald-700">Cross-funktionale Steuerung</span>
+                        <span class="ref-tag bg-emerald-100 text-emerald-700">Stakeholder Management</span>
+                        <span class="ref-tag bg-emerald-100 text-emerald-700">Change Management</span>
+                        <!-- Q4: Metriken & Lernen (sky) -->
+                        <span class="ref-tag bg-sky-100 text-sky-700">Product Analytics</span>
+                        <span class="ref-tag bg-sky-100 text-sky-700">AI-gestützte Datenanalyse</span>
+                        <span class="ref-tag bg-sky-100 text-sky-700">North Star Metric</span>
+                        <span class="ref-tag bg-sky-100 text-sky-700">OKRs</span>
+                        <span class="ref-tag bg-sky-100 text-sky-700">A/B Testing &amp; Experimentation</span>
+                    </div>
+                </div>
+
+                <!-- Tools als Tags -->
+                <div class="mb-10 no-break">
+                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Tools</p>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- Product & Collaboration -->
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Jira</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Confluence</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Miro</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Figma</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Trello</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">GitHub</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Notion</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Slack</span>
+                        <!-- AI & Automation -->
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Claude</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">ChatGPT</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Lovable</span>
+                        <!-- Data & Analytics -->
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">PowerBI</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Tableau</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Google Analytics</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">HubSpot</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Userflow</span>
+                        <!-- Knowledge & Basics -->
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Obsidian</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">MS Office</span>
+                    </div>
+                </div>
+
+                <!-- Zertifizierungen -->
+                <div class="mb-10 no-break">
+                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Zertifizierungen</p>
+                    <p class="text-stone-500 text-[0.85rem]">Product Discovery (Pendo, 2024) · Metrics for Product
+                        Manager
+                        (Mind the Product, 2023) · Certified Scrum Master (Agile42, 2020) · Design Thinking Facilitator
+                        (Haufe Akademie, 2018/19) · Human-Centered Design (HPI, 2018) · SAFe for Teams (ista, 2019)</p>
+                </div>
+
+                <!-- Sprachen -->
+                <div class="no-break">
+                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Sprachen</p>
+                    <p class="text-stone-500 text-[0.85rem]">Deutsch (Muttersprache) · Englisch (C1) · Spanisch (B1/B2)
+                        ·
+                        Französisch (A2)
+                    </p>
+                </div>
+
+            </section>
+
+            <hr class="border-stone-200 my-14 no-print">
+
+
+            <!-- HALTUNG -->
+            <section class="mb-16">
+                <p class="font-mono text-[0.72rem] font-medium uppercase tracking-wider text-stone-600 mb-4">Haltung</p>
+                <p class="source-serif text-stone-800 leading-[1.35] mb-10 text-[1.5em]">Methoden lassen sich erlernen,
+                    Haltung lässt sich nur leben. Drei Prinzipien leiten meine Arbeit, unabhängig von Rolle, Branche
+                    oder
+                    Komplexi&shy;täts&shy;grad.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.8rem] mb-2">Verstehen vor Handeln</p>
+                        <p class="text-stone-500 text-[0.75rem] print:text-[0.75rem] leading-relaxed">Nachhaltige
+                            Lösungen ent&shy;ste&shy;hen aus echtem Verständnis. Bevor ich gestalte, sorge ich für
+                            Klarheit
+                            über
+                            Kontext, Ursachen und Wirk&shy;zusammenhänge – durch Zuhören, Beobachten und gezielte
+                            Analyse.</p>
+                    </div>
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.8rem] mb-2">Klarheit vor Kontrolle</p>
+                        <p class="text-stone-500 text-[0.75rem] print:text-[0.75rem] leading-relaxed">Gute
+                            Entscheidungen entstehen dort, wo Zusammen&shy;hänge nach&shy;vollziehbar sind – nicht dort,
+                            wo
+                            Kontrolle Sicherheit simuliert. Ich setze auf Transparenz und gemeinsame
+                            Entscheidungs&shy;fähigkeit.</p>
+                    </div>
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.8rem] mb-2">Leistung & Kultur als Einheit</p>
+                        <p class="text-stone-500 text-[0.75rem] print:text-[0.75rem] leading-relaxed">Tragfähige
+                            Systeme entstehen dort, wo Rollen klar sind, Ver&shy;ant&shy;wortung geteilt wird &
+                            Zu&shy;sam&shy;men&shy;arbeit
+                            auf Augen&shy;höhe stattfindet. Leistung & Kultur sind keine Ge&shy;gen&shy;sätze,
+                            son&shy;dern
+                            bedingen sich.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- /cv-de -->
 
 
         <!-- ============================================ -->
-        <!-- HALTUNG -->
+        <!-- ENGLISH VERSION -->
         <!-- ============================================ -->
-        <section class="mb-16">
-            <p class="font-mono text-[0.72rem] font-medium uppercase tracking-wider text-stone-600 mb-4">Haltung</p>
-            <p class="source-serif text-stone-800 leading-[1.35] mb-10 text-[1.5em]">Methoden lassen sich erlernen,
-                Haltung lässt sich nur leben. Drei Prinzipien leiten meine Arbeit, unabhängig von Rolle, Branche oder
-                Komplexi&shy;täts&shy;grad.</p>
+        <div id="cv-en" class="lang-hidden">
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="ref-card">
-                    <p class="font-semibold text-stone-900 text-[0.8rem] mb-2">Verstehen vor Handeln</p>
-                    <p class="text-stone-500 text-[0.75rem] print:text-[0.75rem] leading-relaxed">Nachhaltige
-                        Lösungen ent&shy;ste&shy;hen aus echtem Verständnis. Bevor ich gestalte, sorge ich für Klarheit
-                        über
-                        Kontext, Ursachen und Wirk&shy;zusammenhänge – durch Zuhören, Beobachten und gezielte
-                        Analyse.</p>
+            <!-- HEADER -->
+            <header class="mb-16 print:p-0">
+                <div class="flex items-start gap-8">
+                    <!-- Portrait -->
+                    <img src="profile.jpg" alt="Linja Scharffetter"
+                        class="w-[100px] h-[100px] rounded-full object-cover flex-shrink-0"
+                        style="-webkit-print-color-adjust: exact; print-color-adjust: exact;">
+                    <div class="flex-1">
+                        <h1 class="source-serif text-[1.8em] text-stone-900 mb-3 leading-[1.1]">Linja Scharffetter
+                        </h1>
+                        <p class="text-[1em] text-[1.25rem] text-stone-700">Senior Product Manager · Product Strategy ·
+                            Growth &amp; Innovation</p>
+                        <p class="text-[0.85rem] print:text-[0.65rem] text-stone-400 mb-6">M.Sc. Marketing &amp;
+                            Communications · B.A. International Management</p>
+
+                        <!-- Contact -->
+                        <div class="flex flex-wrap gap-x-2 gap-y-2 text-[0.7rem] print:text-[0.53rem] text-stone-400">
+                            <span class="flex items-center gap-1.5 text-violet-400 py-1 px-3 rounded-md bg-violet-50">
+                                <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="14" height="14" fill="currentColor">
+                                    <path
+                                        d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z">
+                                    </path>
+                                </svg>
+                                NRW / Ruhr Area, Germany
+                            </span>
+                            <a href="mailto:scharffetter@linja.me"
+                                class="flex items-center gap-1.5 text-violet-400 hover:text-violet-600 py-1 px-3 bg-violet-50 hover:bg-violet-100 rounded-md no-underline transition-colors duration-200">
+                                <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="14" height="14" fill="currentColor">
+                                    <path
+                                        d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z">
+                                    </path>
+                                </svg>
+                                scharffetter@linja.me
+                            </a>
+                            <a href="tel:+491724725757"
+                                class="flex items-center text-violet-400 hover:text-violet-600 py-1 px-3 bg-violet-50 hover:bg-violet-100 rounded-md hover:text-violet-600 no-underline transition-colors duration-200">
+                                <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="14" height="14" fill="currentColor">
+                                    <path
+                                        d="M7 4V20H17V4H7ZM6 2H18C18.5523 2 19 2.44772 19 3V21C19 21.5523 18.5523 22 18 22H6C5.44772 22 5 21.5523 5 21V3C5 2.44772 5.44772 2 6 2ZM12 17C12.5523 17 13 17.4477 13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17Z">
+                                    </path>
+                                </svg>
+                                +49 172 472 5757
+                            </a>
+                            <a href="https://www.linkedin.com/in/linja-scharffetter-815192121/"
+                                class="flex items-center gap-1.5 text-violet-400 hover:text-violet-600 py-1 px-3 bg-violet-50 hover:bg-violet-100 rounded-md hover:text-violet-600 no-underline transition-colors duration-200">
+                                <svg class="text-violet-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="14" height="14" fill="currentColor">
+                                    <path
+                                        d="M4.00098 3H20.001C20.5533 3 21.001 3.44772 21.001 4V20C21.001 20.5523 20.5533 21 20.001 21H4.00098C3.44869 21 3.00098 20.5523 3.00098 20V4C3.00098 3.44772 3.44869 3 4.00098 3ZM5.00098 5V19H19.001V5H5.00098ZM7.50098 9C6.67255 9 6.00098 8.32843 6.00098 7.5C6.00098 6.67157 6.67255 6 7.50098 6C8.3294 6 9.00098 6.67157 9.00098 7.5C9.00098 8.32843 8.3294 9 7.50098 9ZM6.50098 10H8.50098V17.5H6.50098V10ZM12.001 10.4295C12.5854 9.86534 13.2665 9.5 14.001 9.5C16.072 9.5 17.501 11.1789 17.501 13.25V17.5H15.501V13.25C15.501 12.2835 14.7175 11.5 13.751 11.5C12.7845 11.5 12.001 12.2835 12.001 13.25V17.5H10.001V10H12.001V10.4295Z">
+                                    </path>
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="ref-card">
-                    <p class="font-semibold text-stone-900 text-[0.8rem] mb-2">Klarheit vor Kontrolle</p>
-                    <p class="text-stone-500 text-[0.75rem] print:text-[0.75rem] leading-relaxed">Gute
-                        Entscheidungen entstehen dort, wo Zusammen&shy;hänge nach&shy;vollziehbar sind – nicht dort, wo
-                        Kontrolle Sicherheit simuliert. Ich setze auf Transparenz und gemeinsame
-                        Entscheidungs&shy;fähigkeit.</p>
+            </header>
+
+
+            <!-- HERO STATEMENT -->
+            <section class="mb-16">
+                <p class="source-serif text-stone-800 leading-[1.35] text-[1.5em]">
+                    13+ years of experience in product management, product strategy, growth & innovation, and
+                    organizational transformation – with consistent impact at the intersection of business, product,
+                    technology, and organization.
+                </p>
+                <p class="text-stone-500 max-w-[44em] leading-relaxed mt-4">I think in systems at the intersection
+                    of business, product, and organization. I quickly identify whether a problem is operational or
+                    structural and translate between disciplines to turn implicit assumptions
+                    into shared decision-making foundations. After 8 years in an international
+                    corporation, a deliberate move to end-to-end ownership in a mid-sized company. I seek
+                    strategic responsibility beyond product boundaries – where strategy,
+                    product development, and organization must be thought together.</p>
+                <ul class="mt-6 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                    <li>+EUR 3.5M revenue through digital ordering workflow, 50% faster processing time</li>
+                    <li>+132% active users and +178% documentation volume through customer-centric product</li>
+                    <li>Coordination of regulatory implementation across 17 country markets with 40+ stakeholders</li>
+                    <li>Built effective discovery processes (30+ interviews, systematic validation)</li>
+                </ul>
+            </section>
+
+            <hr class="border-stone-200 my-14 no-print">
+
+
+            <!-- EXPERIENCE -->
+            <section class="mb-16">
+                <p class="font-mono text-[0.72rem] font-medium uppercase tracking-wider text-stone-600 mb-8">Experience
+                </p>
+                <div class="space-y-10">
+
+                    <!-- Station 1 -->
+                    <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
+                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap">2020 – present</span></div>
+                        <div>
+                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">Digital Product Manager → Senior
+                                Digital Product Manager, ABS Safety GmbH</h3>
+                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">After 8 years in an
+                                international
+                                corporate environment, a deliberate move to a mid-sized product team – with
+                                end-to-end ownership from user research through prototyping and go-to-market to
+                                data-driven optimization. Lateral leadership of an 8-person cross-functional
+                                product team in close alignment with executive management.</p>
+                            <ul
+                                class="mt-2 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                                <li>Built a digital ordering workflow generating EUR 3.5M in revenue and 50% faster
+                                    processing time in order fulfillment</li>
+                                <li>Developed a documentation tool for customer retention: +132% active users, +178%
+                                    documentation volume</li>
+                                <li>Hypothesis-driven product development with 30+ user interviews and
+                                    systematic desirability and usability testing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ista bracket -->
+                    <div class="no-break">
+                        <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                            <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap">2012 – 2020</span></div>
+                            <div>
+                                <h3 class="font-semibold text-stone-900 text-[0.99rem]">ista International GmbH</h3>
+                                <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">4 roles in 8 years –
+                                    deliberate lateral movement through Marketing, Product, Innovation, IT, and Change
+                                    Management</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Station 2 -->
+                    <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
+                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">Senior Specialist IT Support &amp;
+                                Communication <span class="font-normal text-[0.85rem] text-stone-400">2019 – 2020</span>
+                            </h3>
+                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Move to the IT-Business
+                                interface
+                                to support change processes not only in content but also systemically.
+                                Preparation of 17 country markets for the transposition of an EU directive into
+                                national law – with implications for marketing,
+                                technology, and finance. Direct reporting to CEO and CFO. Accompanying change management
+                                during major system migrations and restructuring of IT portfolio management.</p>
+                            <ul
+                                class="mt-2 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                                <li>Coordinated EU-wide preparation with 40+ stakeholders and on-time implementation
+                                    across all 17 markets</li>
+                                <li>Change facilitation and conflict mediation during 3 system migrations, each
+                                    affecting
+                                    30–150 employees</li>
+                                <li>Restructured IT portfolio management across 17 countries with significantly
+                                    increased
+                                    implementation success rate</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Station 3 -->
+                    <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
+                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">Specialist Marketing <span
+                                    class="font-normal text-[0.85rem] text-stone-400">2017 – 2019</span></h3>
+                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Transition from market analysis
+                                to independently leading international innovation projects – at the
+                                intersection of Business Development, customer centricity, and product development.
+                                Validation of new business ideas through user research and design thinking, development
+                                of
+                                go-to-market strategies with direct impact on executive decisions.</p>
+                            <ul
+                                class="mt-2 text-stone-500 max-w-[44em] list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                                <li>Sole project lead for PropTech rollout in Switzerland, including
+                                    API coordination and partnership negotiation</li>
+                                <li>Secured ~90% hardware market share in the UK new-build market through
+                                    business model innovation (70–100k residential units/year)</li>
+                                <li>Designed and conducted 50+ in-depth interviews and 2 design thinking workshops – 2
+                                    of the validated ideas were spun off as independent companies (Tooltime,
+                                    Objego)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Station 4 -->
+                    <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
+                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">Marketing Assistant <span
+                                    class="font-normal text-[0.85rem] text-stone-400">2015 – 2017</span></h3>
+                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Responsible for the annual
+                                customer satisfaction survey across 10 core markets (1,000+ customers) and development
+                                of the
+                                Customer Retention Index as a strategic management instrument and for optimizing
+                                operational processes. Contributed to the M&amp;A process (exit to strategic investor
+                                CKI) and
+                                to a company-wide strategy project (focus on change, HR,
+                                process optimization).</p>
+                        </div>
+                    </div>
+
+                    <!-- Station 5 -->
+                    <div class="grid grid-cols-[auto_1fr] gap-x-6 no-break">
+                        <div><span class="text-[0.85rem] text-stone-400 whitespace-nowrap invisible">2012 – 2020</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-stone-900 text-[0.99rem]">Dual Studies Programme <span
+                                    class="font-normal text-[0.85rem] text-stone-400">2012 – 2015</span></h3>
+                            <p class="mt-2 text-stone-500 max-w-[44em] leading-relaxed">Dual studies programme with a
+                                focus on
+                                Corporate Communication &amp; Public Affairs. Rotation through all central business
+                                departments
+                                – from finance and controlling through operations to marketing and sales. Co-responsible
+                                for the first digital sustainability report following GRI guidelines and political
+                                lobbying (EED).</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="ref-card">
-                    <p class="font-semibold text-stone-900 text-[0.8rem] mb-2">Leistung & Kultur als Einheit</p>
-                    <p class="text-stone-500 text-[0.75rem] print:text-[0.75rem] leading-relaxed">Tragfähige
-                        Systeme entstehen dort, wo Rollen klar sind, Ver&shy;ant&shy;wortung geteilt wird &
-                        Zu&shy;sam&shy;men&shy;arbeit
-                        auf Augen&shy;höhe stattfindet. Leistung & Kultur sind keine Ge&shy;gen&shy;sätze, son&shy;dern
-                        bedingen sich.</p>
+            </section>
+
+            <hr class="border-stone-200 my-14 no-print">
+
+
+            <!-- METHODS & CRAFTSMANSHIP -->
+            <section class="mb-16">
+                <p class="font-mono text-[0.72rem] font-medium uppercase tracking-wider text-stone-600 mb-8">Methods
+                    &amp;
+                    Craftsmanship</p>
+                <p class="source-serif text-stone-800 leading-[1.35] mb-10 text-[1.5em]">
+                    I make evidence-based decisions backed by strong execution and use frameworks pragmatically—where
+                    they create measurable impact.</p>
+
+                <!-- Quad Grid as Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.99rem] mb-2"><span
+                                class="inline-block w-2 h-2 rounded-full bg-amber-400 mr-2 relative -top-px"></span>Research
+                            &amp; Strategy</p>
+                        <p class="text-stone-500 text-[0.94rem] print:text-[0.7rem] leading-relaxed">I don't start with
+                            frameworks, but with root causes.
+                            First clarify the impact we want to achieve – then decide whether dialogue,
+                            data analysis, or experiments will yield the greatest insight.</p>
+                    </div>
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.99rem] mb-2"><span
+                                class="inline-block w-2 h-2 rounded-full bg-violet-400 mr-2 relative -top-px"></span>Product
+                            Development &amp; Delivery</p>
+                        <p class="text-stone-500 text-[0.94rem] print:text-[0.7rem] leading-relaxed">
+                            Build–measure–learn
+                            is a steering framework for me, not a ritual.
+                            I validate deliberately where uncertainty arises, and leverage AI when it
+                            accelerates insight – without replacing craftsmanship quality.</p>
+                    </div>
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.99rem] mb-2"><span
+                                class="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2 relative -top-px"></span>Leadership
+                            &amp; Collaboration</p>
+                        <p class="text-stone-500 text-[0.94rem] print:text-[0.75rem] leading-relaxed">Informed
+                            decisions emerge through clarity, not hierarchy.
+                            I make assumptions explicit, document reasoning, and create space for
+                            constructive dissent – so teams stay aligned and can take ownership.</p>
+                    </div>
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[1rem] mb-2"><span
+                                class="inline-block w-2 h-2 rounded-full bg-sky-400 mr-2 relative -top-px"></span>Metrics
+                            &amp; Learning</p>
+                        <p class="text-stone-500 text-[0.94rem] print:text-[0.75rem] leading-relaxed">I measure to
+                            increase decision quality, not to justify outcomes.
+                            Explorative signals in discovery, robust KPIs at scale.
+                            Analysis serves steering and learning, not reporting.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+
+                <!-- Methods as Tags -->
+                <div class="mb-10">
+                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Methods</p>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- Q1: Research & Strategy (amber) -->
+                        <span class="ref-tag bg-amber-100 text-amber-700">Design Thinking &amp; Human-Centered
+                            Design</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">User Research</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">Product Strategy &amp; Roadmap</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">Lean Canvas / BMC</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">Go-to-Market Strategy</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">Growth Strategy</span>
+                        <span class="ref-tag bg-amber-100 text-amber-700">Context Engineering</span>
+                        <!-- Q2: Product Development & Delivery (violet) -->
+                        <span class="ref-tag bg-violet-100 text-violet-700">Product Discovery &amp; Delivery</span>
+                        <span class="ref-tag bg-violet-100 text-violet-700">Prototyping &amp; MVP</span>
+                        <span class="ref-tag bg-violet-100 text-violet-700">AI-Assisted Product Development</span>
+                        <span class="ref-tag bg-violet-100 text-violet-700">RICE / Impact-Effort</span>
+                        <span class="ref-tag bg-violet-100 text-violet-700">Usability Testing</span>
+                        <span class="ref-tag bg-violet-100 text-violet-700">Scrum / Kanban / SAFe</span>
+                        <!-- Q3: Leadership & Collaboration (emerald) -->
+                        <span class="ref-tag bg-emerald-100 text-emerald-700">Agile Leadership</span>
+                        <span class="ref-tag bg-emerald-100 text-emerald-700">Lateral Leadership</span>
+                        <span class="ref-tag bg-emerald-100 text-emerald-700">Cross-Functional Coordination</span>
+                        <span class="ref-tag bg-emerald-100 text-emerald-700">Stakeholder Management</span>
+                        <span class="ref-tag bg-emerald-100 text-emerald-700">Change Management</span>
+                        <!-- Q4: Metrics & Learning (sky) -->
+                        <span class="ref-tag bg-sky-100 text-sky-700">Product Analytics</span>
+                        <span class="ref-tag bg-sky-100 text-sky-700">AI-Assisted Data Analysis</span>
+                        <span class="ref-tag bg-sky-100 text-sky-700">North Star Metric</span>
+                        <span class="ref-tag bg-sky-100 text-sky-700">OKRs</span>
+                        <span class="ref-tag bg-sky-100 text-sky-700">A/B Testing &amp; Experimentation</span>
+                    </div>
+                </div>
+
+                <!-- Tools as Tags -->
+                <div class="mb-10 no-break">
+                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Tools</p>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- Product & Collaboration -->
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Jira</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Confluence</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Miro</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Figma</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Trello</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">GitHub</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Notion</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Slack</span>
+                        <!-- AI & Automation -->
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Claude</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">ChatGPT</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Lovable</span>
+                        <!-- Data & Analytics -->
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">PowerBI</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Tableau</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Google Analytics</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">HubSpot</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Userflow</span>
+                        <!-- Knowledge & Basics -->
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">Obsidian</span>
+                        <span class="ref-tag" style="background: #F5F3EF; color: #888;">MS Office</span>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="mb-10 no-break">
+                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Certifications</p>
+                    <p class="text-stone-500 text-[0.85rem]">Product Discovery (Pendo, 2024) · Metrics for Product
+                        Manager
+                        (Mind the Product, 2023) · Certified Scrum Master (Agile42, 2020) · Design Thinking Facilitator
+                        (Haufe Akademie, 2018/19) · Human-Centered Design (HPI, 2018) · SAFe for Teams (ista, 2019)</p>
+                </div>
+
+                <!-- Languages -->
+                <div class="no-break">
+                    <p class="font-semibold text-stone-900 text-[0.99rem] mb-3">Languages</p>
+                    <p class="text-stone-500 text-[0.85rem]">German (Native) · English (C1) · Spanish (B1/B2) ·
+                        French (A2)
+                    </p>
+                </div>
+
+            </section>
+
+            <hr class="border-stone-200 my-14 no-print">
+
+
+            <!-- APPROACH -->
+            <section class="mb-16">
+                <p class="font-mono text-[0.72rem] font-medium uppercase tracking-wider text-stone-600 mb-4">Approach
+                </p>
+                <p class="source-serif text-stone-800 leading-[1.35] mb-10 text-[1.5em]">Methods can be learned;
+                    an approach can only be lived. Three principles guide my work, regardless of role, industry, or
+                    complexity.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.8rem] mb-2">Understand Before Acting</p>
+                        <p class="text-stone-500 text-[0.75rem] print:text-[0.75rem] leading-relaxed">Sustainable
+                            solutions emerge from genuine understanding. Before I design, I ensure clarity about
+                            context, root causes, and interdependencies – through listening, observing, and targeted
+                            analysis.</p>
+                    </div>
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.8rem] mb-2">Clarity Over Control</p>
+                        <p class="text-stone-500 text-[0.75rem] print:text-[0.75rem] leading-relaxed">Good
+                            decisions emerge where interdependencies are transparent – not where
+                            control simulates security. I rely on transparency and shared
+                            decision-making capability.</p>
+                    </div>
+                    <div class="ref-card">
+                        <p class="font-semibold text-stone-900 text-[0.8rem] mb-2">Performance &amp; Culture</p>
+                        <p class="text-stone-500 text-[0.75rem] print:text-[0.75rem] leading-relaxed">Sustainable
+                            systems emerge where roles are clear, responsibility is shared, and
+                            collaboration happens on equal footing. Performance and culture are not opposites –
+                            they depend on each other.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- /cv-en -->
 
 
         <!-- Share Dialog -->
@@ -518,16 +952,16 @@
             <div
                 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl p-6 w-80">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 class="font-semibold text-stone-900 text-sm">Teilen</h3>
+                    <h3 id="share-title" class="font-semibold text-stone-900 text-sm">Teilen</h3>
                     <button onclick="closeShareDialog()"
                         class="text-stone-400 hover:text-stone-600 text-xl leading-none cursor-pointer bg-transparent border-none">&times;</button>
                 </div>
                 <div class="space-y-2">
-                    <button onclick="copyLink()"
+                    <button id="share-copy-btn" onclick="copyLink()"
                         class="w-full text-left px-3 py-2 border border-stone-200 rounded hover:bg-stone-50 text-sm text-stone-700 cursor-pointer bg-transparent transition-colors">
                         Link kopieren
                     </button>
-                    <button onclick="shareEmail()"
+                    <button id="share-email-btn" onclick="shareEmail()"
                         class="w-full text-left px-3 py-2 border border-stone-200 rounded hover:bg-stone-50 text-sm text-stone-700 cursor-pointer bg-transparent transition-colors">
                         Per E-Mail teilen
                     </button>
@@ -539,6 +973,58 @@
     </div>
 
     <script>
+        /* === Language Toggle === */
+        function getLang() {
+            return localStorage.getItem('cv-lang') || 'de';
+        }
+
+        function setLang(lang) {
+            localStorage.setItem('cv-lang', lang);
+        }
+
+        function applyLanguage(lang) {
+            var cvDe = document.getElementById('cv-de');
+            var cvEn = document.getElementById('cv-en');
+            var langLabel = document.getElementById('lang-label');
+
+            if (lang === 'en') {
+                cvDe.classList.add('lang-hidden');
+                cvEn.classList.remove('lang-hidden');
+                langLabel.textContent = 'DE';
+            } else {
+                cvDe.classList.remove('lang-hidden');
+                cvEn.classList.add('lang-hidden');
+                langLabel.textContent = 'EN';
+            }
+
+            document.documentElement.lang = lang;
+            document.title = lang === 'en'
+                ? 'Linja Scharffetter \u2013 Strategic Systems Designer'
+                : 'Linja Scharffetter \u2013 Strategische Systemgestalterin';
+
+            updateShareLabels(lang);
+        }
+
+        function toggleLanguage() {
+            var current = getLang();
+            var next = current === 'de' ? 'en' : 'de';
+            setLang(next);
+            applyLanguage(next);
+        }
+
+        function updateShareLabels(lang) {
+            var labels = {
+                de: { title: 'Teilen', copy: 'Link kopieren', email: 'Per E-Mail teilen', feedback: 'Link kopiert!' },
+                en: { title: 'Share', copy: 'Copy link', email: 'Share via email', feedback: 'Link copied!' }
+            };
+            var l = labels[lang];
+            document.getElementById('share-title').textContent = l.title;
+            document.getElementById('share-copy-btn').textContent = l.copy;
+            document.getElementById('share-email-btn').textContent = l.email;
+            document.getElementById('copy-feedback').textContent = l.feedback;
+        }
+
+        /* === Share Functions === */
         function openShareDialog() {
             if (navigator.share) {
                 navigator.share({ title: document.title, url: window.location.href }).catch(function () { });
@@ -546,10 +1032,12 @@
                 document.getElementById('share-dialog').classList.remove('hidden');
             }
         }
+
         function closeShareDialog() {
             document.getElementById('share-dialog').classList.add('hidden');
             document.getElementById('copy-feedback').classList.add('hidden');
         }
+
         function copyLink() {
             navigator.clipboard.writeText(window.location.href).then(function () {
                 var feedback = document.getElementById('copy-feedback');
@@ -557,10 +1045,16 @@
                 setTimeout(function () { feedback.classList.add('hidden'); }, 2000);
             });
         }
+
         function shareEmail() {
             window.location.href = 'mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent(window.location.href);
             closeShareDialog();
         }
+
+        /* === Init === */
+        document.addEventListener('DOMContentLoaded', function () {
+            applyLanguage(getLang());
+        });
     </script>
 
 </body>
