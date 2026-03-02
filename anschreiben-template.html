@@ -47,41 +47,74 @@
         /* ─── Header ─── */
         .header {
             display: flex;
-            justify-content: space-between;
             align-items: flex-start;
+            gap: 28px;
             margin-bottom: 48px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid #E5E2DB;
+        }
+
+        .header-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .header-content {
+            flex: 1;
         }
 
         .name {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1.6em;
-            font-weight: 400;
+            font-size: 1.8em;
+            font-weight: 500;
             color: #1A1A1A;
-            letter-spacing: -0.01em;
+            line-height: 1.1;
+            margin-bottom: 8px;
         }
 
         .subtitle {
+            font-size: 1rem;
+            color: #44403c;
+            margin-bottom: 2px;
+        }
+
+        .degrees {
             font-size: 0.85rem;
             color: #a8a29e;
-            margin-top: 4px;
+            margin-bottom: 16px;
         }
 
-        .contact {
-            text-align: right;
-            font-size: 0.75rem;
-            color: #555555;
-            line-height: 1.8;
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
         }
 
-        .contact a {
-            color: #7b6ba5;
+        .contact-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.72rem;
+            font-weight: 400;
+            color: #8b5cf6;
+            background: #f5f3ff;
+            padding: 4px 12px;
+            border-radius: 6px;
             text-decoration: none;
+            transition: background 0.2s, color 0.2s;
         }
 
-        .contact a:hover {
-            text-decoration: underline;
+        a.contact-tag:hover {
+            background: #ede9fe;
+            color: #7c3aed;
+        }
+
+        .contact-tag svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            flex-shrink: 0;
         }
 
         /* ─── Meta (Datum, Empfänger) ─── */
@@ -120,49 +153,7 @@
             hyphens: auto;
         }
 
-        .body .highlight {
-            background: #f6f4f9;
-            border-left: 3px solid #7b6ba5;
-            padding: 12px 16px;
-            margin: 20px 0;
-            border-radius: 0 6px 6px 0;
-            font-size: 0.9rem;
-        }
 
-        .body .highlight strong {
-            color: #463863;
-        }
-
-        /* ─── Kernkompetenzen-Tags ─── */
-        .skills-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin: 16px 0 20px;
-        }
-
-        .skill-tag {
-            font-size: 0.68rem;
-            font-weight: 500;
-            padding: 3px 10px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-
-        .tag-strategy {
-            background: #fae8de;
-            color: #73402e;
-        }
-
-        .tag-tech {
-            background: #e0ede6;
-            color: #31493d;
-        }
-
-        .tag-leadership {
-            background: #ece8f2;
-            color: #463863;
-        }
 
         /* ─── Signatur ─── */
         .signature {
@@ -179,16 +170,6 @@
             color: #1A1A1A;
         }
 
-        /* ─── Footer ─── */
-        .footer {
-            margin-top: 48px;
-            padding-top: 16px;
-            border-top: 1px solid #E5E2DB;
-            font-size: 0.7rem;
-            color: #a8a29e;
-            display: flex;
-            justify-content: space-between;
-        }
 
         /* ─── Print ─── */
         @page {
@@ -210,6 +191,30 @@
 
             .no-print {
                 display: none !important;
+            }
+
+            .header-photo {
+                width: 70px;
+                height: 70px;
+            }
+
+            .header {
+                gap: 20px;
+                margin-bottom: 32px;
+            }
+
+            .degrees {
+                margin-bottom: 10px;
+            }
+
+            .contact-tag {
+                font-size: 0.65rem;
+                padding: 3px 8px;
+            }
+
+            .contact-tag svg {
+                width: 11px;
+                height: 11px;
             }
         }
 
@@ -250,15 +255,29 @@
 
         <!-- ─── HEADER ─── -->
         <div class="header">
-            <div>
+            <img src="profile.jpg" alt="Linja Scharffetter" class="header-photo">
+            <div class="header-content">
                 <div class="name">Linja Scharffetter</div>
-                <div class="subtitle">Strategische Systemgestalterin · Produktmanagement · Transformation</div>
-            </div>
-            <div class="contact">
-                <a href="mailto:scharffetter@linja.me">scharffetter@linja.me</a><br>
-                +49 172 472 5757<br>
-                NRW · Ruhrgebiet<br>
-                <a href="https://www.linkedin.com/in/linja-scharffetter/" target="_blank">LinkedIn</a>
+                <div class="subtitle">Senior Product Manager · Product Strategy · Growth &amp; Innovation</div>
+                <div class="degrees">M.Sc. Marketing &amp; Communications · B.A. International Management</div>
+                <div class="contact-bar">
+                    <span class="contact-tag">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z"></path></svg>
+                        NRW / Ruhrgebiet
+                    </span>
+                    <a href="mailto:scharffetter@linja.me" class="contact-tag">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path></svg>
+                        scharffetter@linja.me
+                    </a>
+                    <a href="tel:+491724725757" class="contact-tag">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 4V20H17V4H7ZM6 2H18C18.5523 2 19 2.44772 19 3V21C19 21.5523 18.5523 22 18 22H6C5.44772 22 5 21.5523 5 21V3C5 2.44772 5.44772 2 6 2ZM12 17C12.5523 17 13 17.4477 13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17Z"></path></svg>
+                        +49 172 472 5757
+                    </a>
+                    <a href="https://www.linkedin.com/in/linja-scharffetter/" target="_blank" class="contact-tag no-print">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.00098 3H20.001C20.5533 3 21.001 3.44772 21.001 4V20C21.001 20.5523 20.5533 21 20.001 21H4.00098C3.44869 21 3.00098 20.5523 3.00098 20V4C3.00098 3.44772 3.44869 3 4.00098 3ZM5.00098 5V19H19.001V5H5.00098ZM7.50098 9C6.67255 9 6.00098 8.32843 6.00098 7.5C6.00098 6.67157 6.67255 6 7.50098 6C8.3294 6 9.00098 6.67157 9.00098 7.5C9.00098 8.32843 8.3294 9 7.50098 9ZM6.50098 10H8.50098V17.5H6.50098V10ZM12.001 10.4295C12.5854 9.86534 13.2665 9.5 14.001 9.5C16.072 9.5 17.501 11.1789 17.501 13.25V17.5H15.501V13.25C15.501 12.2835 14.7175 11.5 13.751 11.5C12.7845 11.5 12.001 12.2835 12.001 13.25V17.5H10.001V10H12.001V10.4295Z"></path></svg>
+                        LinkedIn
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -307,34 +326,6 @@
                 unmittelbar relevant ist."}}
             </p>
 
-            <!-- Optionaler Highlight-Block für Zahlen -->
-            <div class="highlight">
-                <strong>Ergebnisse aus meiner Laufbahn:</strong> {{z.B. "+3,5 Mio € Umsatzsteigerung · +132% aktive Nutzer ·
-                EU-Compliance-Projekt mit 40+ Stakeholdern in 17 Ländern · 2 Spin-outs initiiert"}}
-            </div>
-
-            <!-- ┌──────────────────────────────────────────────┐
-                 │  BAUSTEIN 3: SKILL-TAGS                      │
-                 │  Relevante Tags auswählen, Rest löschen      │
-                 └──────────────────────────────────────────────┘ -->
-
-            <div class="skills-bar">
-                <!-- Strategie (Amber) -->
-                <span class="skill-tag tag-strategy">Produktstrategie</span>
-                <span class="skill-tag tag-strategy">OKR</span>
-                <span class="skill-tag tag-strategy">Go-to-Market</span>
-                <span class="skill-tag tag-strategy">Business Model Canvas</span>
-                <!-- Tech/Systeme (Emerald) -->
-                <span class="skill-tag tag-tech">Scrum / Kanban / SAFe</span>
-                <span class="skill-tag tag-tech">Hypothesis-driven Development</span>
-                <span class="skill-tag tag-tech">Product Analytics</span>
-                <span class="skill-tag tag-tech">A/B Testing</span>
-                <!-- Leadership (Violet) -->
-                <span class="skill-tag tag-leadership">Stakeholder Management</span>
-                <span class="skill-tag tag-leadership">Change Management</span>
-                <span class="skill-tag tag-leadership">Lateral Leadership</span>
-                <span class="skill-tag tag-leadership">Facilitation</span>
-            </div>
 
             <!-- ┌──────────────────────────────────────────────┐
                  │  BAUSTEIN 4: KULTURFIT / ARBEITSWEISE         │
@@ -371,11 +362,6 @@
             <div class="name-sign">Linja Scharffetter</div>
         </div>
 
-        <!-- ─── FOOTER ─── -->
-        <div class="footer">
-            <span>scharffetter@linja.me · +49 172 472 5757</span>
-            <span>NRW · Ruhrgebiet</span>
-        </div>
 
     </div>
 

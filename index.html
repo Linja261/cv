@@ -77,6 +77,18 @@
             display: none !important;
         }
 
+        .role-hidden {
+            display: none !important;
+        }
+
+        #role-toggle {
+            display: none;
+        }
+
+        #role-toggle.visible {
+            display: flex;
+        }
+
         @media print {
             .no-print {
                 display: none !important;
@@ -219,6 +231,10 @@
             class="flex items-center text-xs px-2 py-1.5 border border-stone-200 rounded text-stone-400 hover:text-stone-600 hover:border-stone-400 cursor-pointer transition-colors font-mono tracking-wide">
             <span id="lang-label">EN</span>
         </button>
+        <button id="role-toggle" onclick="toggleRole()" style="background: #FAFAF8;"
+            class="items-center text-xs px-2 py-1.5 border border-stone-200 rounded text-stone-400 hover:text-stone-600 hover:border-stone-400 cursor-pointer transition-colors font-mono tracking-wide">
+            <span id="role-label">CoS</span>
+        </button>
         <button onclick="window.print()" style="background: #FAFAF8;"
             class="flex text-xs px-1.5 py-1.5 border border-stone-200 rounded text-stone-400 hover:text-stone-600 hover:border-stone-400 cursor-pointer transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
@@ -254,8 +270,10 @@
                     <div class="flex-1">
                         <h1 class="source-serif text-[1.8em] text-stone-900 mb-3 leading-[1.1]">Linja Scharffetter
                         </h1>
-                        <p class="text-[1em] text-[1.25rem] text-stone-700">Senior Product Manager · Product Strategy ·
-                            Growth &amp; Innovation</p>
+                        <p class="text-[1em] text-[1.25rem] text-stone-700">
+                            <span data-role="product">Senior Product Manager · Product Strategy · Growth &amp; Innovation</span>
+                            <span data-role="cos" class="role-hidden">Chief of Staff · Organisationale Transformation · Strategische Systemgestaltung</span>
+                        </p>
                         <p class="text-[0.85rem] print:text-[0.55rem] text-stone-400 mb-6 print:mb-1">M.Sc. Marketing
                             &amp;
                             Communications · B.A. International Management</p>
@@ -309,29 +327,59 @@
 
             <!-- HERO STATEMENT -->
             <section class="mb-16 print:mb-3">
-                <p
-                    class="source-serif text-stone-800 leading-[1.35] print:leading-[1.2] text-[1.5em] print:text-[0.80rem]">
-                    13+ Jahre Erfahrung in Product Management, Product Strategy, Growth &amp; Innovation und
-                    organisationaler Transformation – mit konsequenter Wirkung an der Schnittstelle von Business,
-                    Produkt, Technologie und Organisation.
-                </p>
-                <p class="text-stone-500 max-w-[44em] print:max-w-none leading-relaxed mt-4">Ich denke in Systemen –
-                    ich erkenne schnell, ob ein Problem operativ oder
-                    struktu&shy;rell ist, und übersetze zwischen Disziplinen, um aus impliziten Annahmen
-                    Entscheidungen zu ermöglichen und herbei&shy;zuführen. Nach 8 Jahren und 4 Rollen –
-                    von Customer Insights über Innovation bis Change Management – ein bewusster Wechsel
-                    zu direkter Produkt&shy;verantwortung im Mittelstand. Ich suche
-                    strategische Verantwortung dort, wo Produkt&shy;entscheidungen, Geschäfts&shy;strategie
-                    und Organisations&shy;design zusammen&shy;wirken – und gemeinsam über Wachstum entscheiden.</p>
-                <ul
-                    class="mt-6 print:mt-1 text-stone-500 max-w-[44em] print:max-w-none list-disc list-outside ml-4 space-y-1 leading-relaxed">
-                    <li>+3,5 Mio. € Umsatz durch digitale Bestellstrecke in 18 Monaten, 50 % schnellere Bearbeitungszeit</li>
-                    <li>+132 % aktive Nutzer und +178 % Dokumentationsvolumen über 4 Jahre bei Dokumentationstool</li>
-                    <li>Internationales Projektmanagement über 17 Ländermärkte und 40+ Stakeholder (EU-Regulatorik)</li>
-                    <li>Aufbau wirksamer Discovery-Prozesse (30+ Interviews, systematische Validierung)</li>
-                    <li>~90 % Hardware-Marktanteil im britischen Neubaumarkt gesichert durch Geschäftsmodell-Innovation (70–100k WE/Jahr)</li>
-                    <li>Markt- und Kundenvalidierung für 2 Geschäftsideen, die später als eigenständige Unternehmen ausgegründet wurden (Tooltime, Objego)</li>
-                </ul>
+                <!-- Product Narrative -->
+                <div data-role="product">
+                    <p
+                        class="source-serif text-stone-800 leading-[1.35] print:leading-[1.2] text-[1.5em] print:text-[0.80rem]">
+                        13+ Jahre Erfahrung in Product Management, Product Strategy, Growth &amp; Innovation und
+                        organisationaler Transformation – mit konsequenter Wirkung an der Schnittstelle von Business,
+                        Produkt, Technologie und Organisation.
+                    </p>
+                    <p class="text-stone-500 max-w-[44em] print:max-w-none leading-relaxed mt-4">Ich denke in Systemen –
+                        ich erkenne schnell, ob ein Problem operativ oder
+                        struktu&shy;rell ist, und übersetze zwischen Disziplinen, um aus impliziten Annahmen
+                        Entscheidungen zu ermöglichen und herbei&shy;zuführen. Nach 8 Jahren und 4 Rollen –
+                        von Customer Insights über Innovation bis Change Management – ein bewusster Wechsel
+                        zu direkter Produkt&shy;verantwortung im Mittelstand. Ich suche
+                        strategische Verantwortung dort, wo Produkt&shy;entscheidungen, Geschäfts&shy;strategie
+                        und Organisations&shy;design zusammen&shy;wirken – und gemeinsam über Wachstum entscheiden.</p>
+                    <ul
+                        class="mt-6 print:mt-1 text-stone-500 max-w-[44em] print:max-w-none list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                        <li>+3,5 Mio. € Umsatz durch digitale Bestellstrecke in 18 Monaten, 50 % schnellere Bearbeitungszeit</li>
+                        <li>+132 % aktive Nutzer und +178 % Dokumentationsvolumen über 4 Jahre bei Dokumentationstool</li>
+                        <li>Internationales Projektmanagement über 17 Ländermärkte und 40+ Stakeholder (EU-Regulatorik)</li>
+                        <li>Aufbau wirksamer Discovery-Prozesse (30+ Interviews, systematische Validierung)</li>
+                        <li>~90 % Hardware-Marktanteil im britischen Neubaumarkt gesichert durch Geschäftsmodell-Innovation (70–100k WE/Jahr)</li>
+                        <li>Markt- und Kundenvalidierung für 2 Geschäftsideen, die später als eigenständige Unternehmen ausgegründet wurden (Tooltime, Objego)</li>
+                    </ul>
+                </div>
+                <!-- Chief of Staff Narrative -->
+                <div data-role="cos" class="role-hidden">
+                    <p
+                        class="source-serif text-stone-800 leading-[1.35] print:leading-[1.2] text-[1.5em] print:text-[0.80rem]">
+                        13+ Jahre Erfahrung in organisationaler Transformation, strategischer Steuerung und
+                        System&shy;gestaltung – mit konsequenter Wirkung an der Schnittstelle von
+                        Geschäfts&shy;strategie, Organisations&shy;design, Kultur und Führung.
+                    </p>
+                    <p class="text-stone-500 max-w-[44em] print:max-w-none leading-relaxed mt-4">Ich denke in Systemen –
+                        ich erkenne schnell, ob ein Problem operativ oder
+                        struktu&shy;rell ist, und übersetze zwischen Business, Produkt, Technologie und Kultur,
+                        um Entscheidungs&shy;fähigkeit zu schaffen und strategische Unschärfe in
+                        handlungs&shy;fähige Strukturen zu überführen. Nach 8 Jahren und 4 Rollen –
+                        von Customer Insights über Innovation bis Change Management – und anschließender
+                        strategischer Produkt&shy;verantwortung im Mittelstand suche ich eine Rolle als
+                        Denk&shy;partnerin für Führung: dort, wo Strategie, Organisation und Kultur
+                        gemeinsam über Wirksam&shy;keit entscheiden.</p>
+                    <ul
+                        class="mt-6 print:mt-1 text-stone-500 max-w-[44em] print:max-w-none list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                        <li>EU-weite Governance über 17 Ländermärkte und 40+ Stakeholder mit direktem CEO/CFO-Reporting – fristgerechte Umsetzung einer EU-Direktive</li>
+                        <li>Change-Begleitung und Konflikt&shy;mediation bei 3 System&shy;umstellungen (je 30–150 Betroffene) – Brücke zwischen IT, Business und betroffenen Teams</li>
+                        <li>Neustrukturierung des IT-Portfolio-Managements über 17 Länder mit signifikant erhöhter Umsetzungs&shy;wahrscheinlichkeit</li>
+                        <li>Strategisches Sparring mit der Geschäfts&shy;führung zu Investitions&shy;entscheidungen, Portfolio-Priorisierung und Wachstums&shy;strategie</li>
+                        <li>Laterale Führung eines 8-köpfigen cross&shy;funktionalen Teams – Aufbau klarer Rollen, Entscheidungs&shy;prozesse und Kommunikations&shy;strukturen</li>
+                        <li>Validierung und strategische Vorbereitung von 2 Geschäfts&shy;ideen, die als eigenständige Unternehmen ausgegründet wurden (Tooltime, Objego)</li>
+                    </ul>
+                </div>
             </section>
 
             <hr class="border-stone-200 my-14 no-print">
@@ -729,8 +777,10 @@
                     <div class="flex-1">
                         <h1 class="source-serif text-[1.8em] text-stone-900 mb-3 leading-[1.1]">Linja Scharffetter
                         </h1>
-                        <p class="text-[1em] text-[1.25rem] text-stone-700">Senior Product Manager · Product Strategy ·
-                            Growth &amp; Innovation</p>
+                        <p class="text-[1em] text-[1.25rem] text-stone-700">
+                            <span data-role="product">Senior Product Manager · Product Strategy · Growth &amp; Innovation</span>
+                            <span data-role="cos" class="role-hidden">Chief of Staff · Organizational Transformation · Strategic Systems Design</span>
+                        </p>
                         <p class="text-[0.85rem] print:text-[0.55rem] text-stone-400 mb-6 print:mb-1">M.Sc. Marketing
                             &amp;
                             Communications · B.A. International Management</p>
@@ -784,29 +834,58 @@
 
             <!-- HERO STATEMENT -->
             <section class="mb-16 print:mb-3">
-                <p
-                    class="source-serif text-stone-800 leading-[1.35] print:leading-[1.2] text-[1.5em] print:text-[0.80rem]">
-                    13+ years of experience in product management, product strategy, growth & innovation, and
-                    organizational transformation – with consistent impact at the intersection of business, product,
-                    technology, and organization.
-                </p>
-                <p class="text-stone-500 max-w-[44em] print:max-w-none leading-relaxed mt-4">I think in systems –
-                    I quickly identify whether a problem is operational or
-                    structural and translate between disciplines to surface implicit assumptions
-                    and enable decisions. After 8 years and 4 roles –
-                    from customer insights through innovation to change management – a deliberate move
-                    to direct product ownership in a mid-sized company. I seek
-                    strategic responsibility where product decisions, business strategy,
-                    and organizational design converge – and jointly determine growth.</p>
-                <ul
-                    class="mt-6 print:mt-1 text-stone-500 max-w-[44em] print:max-w-none list-disc list-outside ml-4 space-y-1 leading-relaxed">
-                    <li>+EUR 3.5M revenue through digital ordering workflow within 18 months, 50% faster processing time</li>
-                    <li>+132% active users and +178% documentation volume over 4 years in the documentation tool</li>
-                    <li>International project management across 17 country markets and 40+ stakeholders (EU regulation)</li>
-                    <li>Built effective discovery processes (30+ interviews, systematic validation)</li>
-                    <li>Secured ~90% hardware market share in the UK new-build market through business model innovation (70–100k units/year)</li>
-                    <li>Market and customer validation for 2 business ideas that were later spun off as independent companies (Tooltime, Objego)</li>
-                </ul>
+                <!-- Product Narrative -->
+                <div data-role="product">
+                    <p
+                        class="source-serif text-stone-800 leading-[1.35] print:leading-[1.2] text-[1.5em] print:text-[0.80rem]">
+                        13+ years of experience in product management, product strategy, growth & innovation, and
+                        organizational transformation – with consistent impact at the intersection of business, product,
+                        technology, and organization.
+                    </p>
+                    <p class="text-stone-500 max-w-[44em] print:max-w-none leading-relaxed mt-4">I think in systems –
+                        I quickly identify whether a problem is operational or
+                        structural and translate between disciplines to surface implicit assumptions
+                        and enable decisions. After 8 years and 4 roles –
+                        from customer insights through innovation to change management – a deliberate move
+                        to direct product ownership in a mid-sized company. I seek
+                        strategic responsibility where product decisions, business strategy,
+                        and organizational design converge – and jointly determine growth.</p>
+                    <ul
+                        class="mt-6 print:mt-1 text-stone-500 max-w-[44em] print:max-w-none list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                        <li>+EUR 3.5M revenue through digital ordering workflow within 18 months, 50% faster processing time</li>
+                        <li>+132% active users and +178% documentation volume over 4 years in the documentation tool</li>
+                        <li>International project management across 17 country markets and 40+ stakeholders (EU regulation)</li>
+                        <li>Built effective discovery processes (30+ interviews, systematic validation)</li>
+                        <li>Secured ~90% hardware market share in the UK new-build market through business model innovation (70–100k units/year)</li>
+                        <li>Market and customer validation for 2 business ideas that were later spun off as independent companies (Tooltime, Objego)</li>
+                    </ul>
+                </div>
+                <!-- Chief of Staff Narrative -->
+                <div data-role="cos" class="role-hidden">
+                    <p
+                        class="source-serif text-stone-800 leading-[1.35] print:leading-[1.2] text-[1.5em] print:text-[0.80rem]">
+                        13+ years of experience in organizational transformation, strategic governance, and
+                        systems design – with consistent impact at the intersection of business strategy,
+                        organizational design, culture, and leadership.
+                    </p>
+                    <p class="text-stone-500 max-w-[44em] print:max-w-none leading-relaxed mt-4">I think in systems –
+                        I quickly identify whether a problem is operational or
+                        structural and translate between business, product, technology, and culture
+                        to enable decision-making and turn strategic ambiguity into actionable structures.
+                        After 8 years and 4 roles – from customer insights through innovation
+                        to change management – followed by strategic product ownership in a mid-sized company,
+                        I seek a role as a thought partner to leadership: where strategy, organization,
+                        and culture jointly determine effectiveness.</p>
+                    <ul
+                        class="mt-6 print:mt-1 text-stone-500 max-w-[44em] print:max-w-none list-disc list-outside ml-4 space-y-1 leading-relaxed">
+                        <li>EU-wide governance across 17 country markets and 40+ stakeholders with direct CEO/CFO reporting – on-time implementation of an EU directive</li>
+                        <li>Change facilitation and conflict mediation during 3 major system migrations (30–150 affected employees each) – bridging IT, business, and impacted teams</li>
+                        <li>Restructured IT portfolio management across 17 countries with significantly increased implementation success rate</li>
+                        <li>Strategic sparring partner to executive management on investment decisions, portfolio prioritization, and growth strategy</li>
+                        <li>Lateral leadership of an 8-person cross-functional team – established clear roles, decision processes, and communication structures</li>
+                        <li>Validated and strategically prepared 2 business ideas that were later spun off as independent companies (Tooltime, Objego)</li>
+                    </ul>
+                </div>
             </section>
 
             <hr class="border-stone-200 my-14 no-print">
@@ -1225,10 +1304,7 @@
             }
 
             document.documentElement.lang = lang;
-            document.title = lang === 'en'
-                ? 'Linja Scharffetter \u2013 Strategic Systems Designer'
-                : 'Linja Scharffetter \u2013 Strategische Systemgestalterin';
-
+            updateDocTitle(lang, getRole());
             updateShareLabels(lang);
         }
 
@@ -1278,9 +1354,93 @@
             closeShareDialog();
         }
 
+        /* === Role Toggle === */
+        function getRole() {
+            return localStorage.getItem('cv-role') || 'product';
+        }
+
+        function setRole(role) {
+            localStorage.setItem('cv-role', role);
+        }
+
+        function applyRole(role) {
+            var productEls = document.querySelectorAll('[data-role="product"]');
+            var cosEls = document.querySelectorAll('[data-role="cos"]');
+
+            if (role === 'cos') {
+                productEls.forEach(function (el) { el.classList.add('role-hidden'); });
+                cosEls.forEach(function (el) { el.classList.remove('role-hidden'); });
+            } else {
+                productEls.forEach(function (el) { el.classList.remove('role-hidden'); });
+                cosEls.forEach(function (el) { el.classList.add('role-hidden'); });
+            }
+
+            var roleLabel = document.getElementById('role-label');
+            if (roleLabel) {
+                roleLabel.textContent = role === 'product' ? 'CoS' : 'PM';
+            }
+
+            updateDocTitle(getLang(), role);
+        }
+
+        function toggleRole() {
+            var current = getRole();
+            var next = current === 'product' ? 'cos' : 'product';
+            setRole(next);
+            applyRole(next);
+        }
+
+        function updateDocTitle(lang, role) {
+            document.title = lang === 'en'
+                ? 'Linja Scharffetter \u2013 Strategic Systems Designer'
+                : 'Linja Scharffetter \u2013 Strategische Systemgestalterin';
+        }
+
+        /* === Editor Mode (Role Toggle Visibility) === */
+        function isEditorMode() {
+            return localStorage.getItem('cv-role-editor') === 'true';
+        }
+
+        function toggleEditorMode() {
+            var btn = document.getElementById('role-toggle');
+            if (isEditorMode()) {
+                localStorage.removeItem('cv-role-editor');
+                btn.classList.remove('visible');
+            } else {
+                localStorage.setItem('cv-role-editor', 'true');
+                btn.classList.add('visible');
+                showEditorToast();
+            }
+        }
+
+        function showEditorToast() {
+            var toast = document.createElement('div');
+            toast.textContent = 'Editor mode';
+            toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);' +
+                'background:#292524;color:#fafaf8;padding:6px 16px;border-radius:6px;font-size:12px;' +
+                'font-family:ui-monospace,monospace;opacity:0;transition:opacity 0.3s;z-index:100;';
+            document.body.appendChild(toast);
+            requestAnimationFrame(function () { toast.style.opacity = '1'; });
+            setTimeout(function () {
+                toast.style.opacity = '0';
+                setTimeout(function () { toast.remove(); }, 300);
+            }, 1200);
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.shiftKey && e.altKey && (e.key === 'R' || e.key === 'r' || e.key === '®')) {
+                e.preventDefault();
+                toggleEditorMode();
+            }
+        });
+
         /* === Init === */
         document.addEventListener('DOMContentLoaded', function () {
             applyLanguage(getLang());
+            applyRole(getRole());
+            if (isEditorMode()) {
+                document.getElementById('role-toggle').classList.add('visible');
+            }
         });
     </script>
 
