@@ -20,7 +20,7 @@
     <title>Linja Scharffetter – Strategische Systemgestalterin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&family=Geist+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&family=Geist+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -223,6 +223,33 @@
             .contact-bar {
                 gap: 0.6rem !important;
             }
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           BRAND 2026 — NUR SCREEN. Print bleibt 1:1 wie bisher (2-Seiten-Fit).
+           ═══════════════════════════════════════════════════════════ */
+        @media screen {
+            /* Schrift: alles Fraunces (Body + Headlines) */
+            body.font-sans { font-family: 'Fraunces', Georgia, serif; }
+            .source-serif { font-family: 'Fraunces', Georgia, serif; }
+            /* Überschriften/Name → Midnight */
+            h1.source-serif, h2.source-serif, h3.source-serif { color: #472E56; }
+            /* Palette 2026 — Akzente & Kategorie-Tags */
+            /* Violet (Primär) → Heidelbeer/Midnight */
+            .text-violet-700, .text-violet-600 { color: #472E56 !important; }
+            .text-violet-400 { color: #7b6ba5 !important; }
+            .bg-violet-50 { background-color: #f6f4f9 !important; }
+            .bg-violet-100 { background-color: #ece8f2 !important; }
+            .bg-violet-400 { background-color: #7b6ba5 !important; }
+            /* Amber (Strategie) → Grapefruit */
+            .text-amber-700 { color: #C2410C !important; }
+            .bg-amber-100 { background-color: #FFE6DA !important; }
+            /* Emerald (Tech/Systeme) → Lilac */
+            .text-emerald-700 { color: #472E56 !important; }
+            .bg-emerald-100 { background-color: #E3CCFF !important; }
+            /* Sky (Kommunikation) → Lavender Crayola */
+            .text-sky-700 { color: #472E56 !important; }
+            .bg-sky-100 { background-color: #FBE3EC !important; }
         }
     </style>
 </head>
