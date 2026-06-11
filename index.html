@@ -223,34 +223,46 @@
             .contact-bar {
                 gap: 0.6rem !important;
             }
+
+            /* Header-Foto im Druck begrenzen — hebt self-stretch auf, sichert 2-Seiten-Fit */
+            header img {
+                width: 56px !important;
+                height: 72px !important;
+                align-self: flex-start !important;
+                object-fit: cover;
+                object-position: top;
+            }
         }
 
         /* ═══════════════════════════════════════════════════════════
            BRAND 2026 — NUR SCREEN. Print bleibt 1:1 wie bisher (2-Seiten-Fit).
            ═══════════════════════════════════════════════════════════ */
         @media screen {
-            /* Schrift: alles Fraunces (Body + Headlines) */
+            /* Schrift: alles Fraunces (Body + Headlines) — NUR Screen, Print behält Inter/Serif */
             body.font-sans { font-family: 'Fraunces', Georgia, serif; }
             .source-serif { font-family: 'Fraunces', Georgia, serif; }
-            /* Überschriften/Name → Midnight */
+            /* Überschriften/Name → Midnight — NUR Screen, Print-Headings bleiben schwarz */
             h1.source-serif, h2.source-serif, h3.source-serif { color: #472E56; }
-            /* Palette 2026 — Akzente & Kategorie-Tags */
-            /* Violet (Primär) → Heidelbeer/Midnight */
-            .text-violet-700, .text-violet-600 { color: #472E56 !important; }
-            .text-violet-400 { color: #7b6ba5 !important; }
-            .bg-violet-50 { background-color: #f6f4f9 !important; }
-            .bg-violet-100 { background-color: #ece8f2 !important; }
-            .bg-violet-400 { background-color: #7b6ba5 !important; }
-            /* Amber (Strategie) → Grapefruit */
-            .text-amber-700 { color: #C2410C !important; }
-            .bg-amber-100 { background-color: #FFE6DA !important; }
-            /* Emerald (Tech/Systeme) → Lilac */
-            .text-emerald-700 { color: #472E56 !important; }
-            .bg-emerald-100 { background-color: #E3CCFF !important; }
-            /* Sky (Kommunikation) → Lavender Crayola */
-            .text-sky-700 { color: #472E56 !important; }
-            .bg-sky-100 { background-color: #FBE3EC !important; }
         }
+
+        /* ═══════════════════════════════════════════════════════════
+           BRAND 2026 — Akzent-/Tag-Farben für Screen UND Print (keine Schriften).
+           ═══════════════════════════════════════════════════════════ */
+        /* Violet (Primär) → Heidelbeer/Midnight */
+        .text-violet-700, .text-violet-600 { color: #472E56 !important; }
+        .text-violet-400 { color: #7b6ba5 !important; }
+        .bg-violet-50 { background-color: #f6f4f9 !important; }
+        .bg-violet-100 { background-color: #ece8f2 !important; }
+        .bg-violet-400 { background-color: #7b6ba5 !important; }
+        /* Amber (Strategie) → Grapefruit */
+        .text-amber-700 { color: #C2410C !important; }
+        .bg-amber-100 { background-color: #FFE6DA !important; }
+        /* Emerald (Tech/Systeme) → Lilac */
+        .text-emerald-700 { color: #472E56 !important; }
+        .bg-emerald-100 { background-color: #E3CCFF !important; }
+        /* Sky (Kommunikation) → Lavender Crayola */
+        .text-sky-700 { color: #472E56 !important; }
+        .bg-sky-100 { background-color: #FBE3EC !important; }
     </style>
 </head>
 
